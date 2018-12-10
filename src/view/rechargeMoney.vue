@@ -220,7 +220,7 @@ export default {
             color: #cdd6e4;
             font-size: 14px;
             border-radius: 3px;
-            background-color: #262a42;
+            background-color: #14143f;
             margin-left: 20px;
         }
         .btn{

@@ -55,12 +55,12 @@
 		},
 		mounted() {
 			var that = this;
-			$('.chart-page').css('background','#131a21')
+			$('.chart-page').css('background','#181b2a')
  
 
 			var theme=window.localStorage.getItem('theme') || '';
 			if(theme=='dark'){
-				that.bg='#131a21';
+				that.bg='#181b2a';
 				that.grid='#1E2740';
 				that.csspath='bundles/newdark.css';
 				that.createWidget();
@@ -77,7 +77,7 @@
 					return;
 				}
 				if(data=='dark'){
-					that.bg='#131a21';
+					that.bg='#181b2a';
 					that.grid='#1E2740';
 					that.csspath='bundles/newdark.css'
 					that.createWidget();
@@ -504,7 +504,7 @@
 					}
 					$.ajax({
 						// url:'http://ice.adminchao.com/api/deal/info?' +
-						url:'http://www.guiguu.com/api/currency/new_timeshar?' +
+						url:'http://newtrading.mobile369.com/api/currency/new_timeshar?' +
 						'from='+rangeStartDate+'&to='+rangeEndDate+'&symbol='+symbolInfo.name+'&period='+resolution,
 						type:'get',
 						success: function(res){

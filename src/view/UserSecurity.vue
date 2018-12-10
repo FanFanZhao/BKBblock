@@ -207,7 +207,7 @@ export default {
 </script>
 
 <style lang='scss'>
-$navBack: #181b2a;
+$navBack: #18184c;
 $red: #d45858;
 $line: #303b4b;
 $fColor2: #637085;

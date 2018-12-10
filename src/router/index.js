@@ -58,7 +58,8 @@ export default new Router({
 			name: 'home',
 			component: home,
 
-			children: [{
+			children: [
+				{
 					path: '',
 					name: 'homeContent',
 					component: homeContent

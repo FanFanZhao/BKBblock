@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$navBack:#181b2a;	
+$navBack:#18184c;	
 $base:#5697f4;
 $line:#303b4b;
 $fColor2:#637085;
@@ -107,7 +107,7 @@ $fColor2:#637085;
     color: #cdd6e4;
     font-size: 16px;
     border-radius: 3px;
-    background-color: #262a42;
+    background-color: #14143f;
 }
 </style>
 

@@ -118,7 +118,7 @@ export default {
       .nav-after {
         display: block;
         height: 10px;
-        background-color: #262a42;
+        background-color: #14143f;
       }
       .account-content {
         width: 100%;

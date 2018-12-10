@@ -35,10 +35,10 @@
         <span>下单时间：</span>
         <span>{{msg.format_create_time}}</span>
       </div>
-      <div>
+      <!-- <div>
         <span>识别码：</span>
         <span style="color:red">{{msg.messy_code}}</span>
-      </div>
+      </div> -->
       <div v-if="msg.pay_voucher">
         <span>支付凭证：</span>
         <img :src="msg.pay_voucher" alt="" class="curPer" style="width:40px;height:40px" @click="evimgs(msg.pay_voucher)">
@@ -217,7 +217,7 @@ export default {
   width: 1200px;
   margin: 50px auto;
   > .title {
-    // background: #f8f8f8;
+    // background:18184c;
     margin-bottom: 20px;
     padding: 0  0 20px 30px;
     span{
@@ -230,7 +230,7 @@ export default {
     }
   }
   > .info {
-    // background: #f8f8f8;
+    // background:18184c;
     padding: 0 30px;
     line-height: 40px;
     >div{
@@ -262,7 +262,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.7);
+    background:18184c;
     >.content{
       background: #fff;
       margin: 200px auto 0;

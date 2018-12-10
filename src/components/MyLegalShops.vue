@@ -69,12 +69,12 @@ export default {
   > .title {
     margin-bottom: 20px;
     padding: 0 30px;
-    // background: #f8f8f8;
+    // background:18184c;
     line-height: 50px;
   }
   > .list-box {
     line-height: 30px;
-    // background: #f8f8f8;
+    // background:18184c;
     padding: 0 30px;
     .list-header,
     li {

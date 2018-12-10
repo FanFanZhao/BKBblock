@@ -22,26 +22,27 @@ Vue.prototype.$echarts = echarts
 window.eventBus = new Vue()
 let bus = new Vue()
 Vue.prototype.bus = bus
-Vue.use(VueSocketio, 'http://www.guiguu.com:2134');
+Vue.use(VueSocketio, 'http://newtrading.mobile369.com:2130');
 Vue.prototype.$changeTheme = function (type) {
 	var head = document.querySelector('head');
 	var link = document.querySelector('link#darkTheme');
 	console.log(head, link);
 
-	var theme = window.localStorage.getItem('theme');
+	// var theme = window.localStorage.getItem('theme');
+	var theme = 'dark';
 	if (theme != type) {
 		window.localStorage.setItem('theme', type);
 	}
-	if (type == 'light') {
-		if (link == null) {
-			console.log('lalalal');
+	// if (type == 'light') {
+	// 	if (link == null) {
+	// 		console.log('lalalal');
 
-			return;
-		} else {
-			head.removeChild(link);
-			eventBus.$emit('theme', 'light')
-		}
-	} else {
+	// 		return;
+	// 	} else {
+	// 		head.removeChild(link);
+	// 		eventBus.$emit('theme', 'light')
+	// 	}
+	// } else {
 		if (link == null) {
 			link = document.createElement('link');
 			link.id = 'darkTheme';
@@ -52,7 +53,7 @@ Vue.prototype.$changeTheme = function (type) {
 		} else {
 			return;
 		}
-	}
+	// }
 }
 Vue.prototype.$makeSocketId = function () {
 	var d = new Date().getTime();

@@ -51,6 +51,6 @@
 </script>
 
 <style scoped>
-.notice_container{width:100%;height :40px;padding: 0 30px; background-color: #181b2a;line-height: 40px;color: #637085}
+.notice_container{width:100%;height :40px;padding: 0 30px; background-color: #18184c;line-height: 40px;color: #637085}
 
 </style>

@@ -164,7 +164,7 @@ export default {
   height: 48px;
   line-height: 48px;
   padding: 0 10px 0 30px;
-  background-color: #181b2a;
+  background-color: #18184c;
 }
 .content {
   padding: 0 10px;
@@ -197,7 +197,7 @@ export default {
   color: #cc4951;
 }
 .list-item li:hover{
-  background: #262a42;
+  background: #14143f;
 }
 .line {
   height: 5px;

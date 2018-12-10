@@ -53,7 +53,7 @@ export default {
       isShow: 0,
       tabList: [],
       marketList: [],
-      newData: ["HQ", "$0.076128", "-1.11%"],
+      newData: ["BKB", "$0.076128", "-1.11%"],
       legal_index: '',
       currency_index: '',
       tradeDatas: "",
@@ -392,7 +392,7 @@ export default {
 .coin-wrap li span:last-child {
   color: #ff6e42;
 }
-/* .coin-wrap li:nth-child(odd){background-color: #181b2a;} */
+/* .coin-wrap li:nth-child(odd){background-color: #18184c;} */
 .coin-wrap li span.green {
   color: #459e80;
 }

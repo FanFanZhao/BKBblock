@@ -5,7 +5,7 @@
             <div class="title">注册</div>
             <div class="tab">
                 <span :class='{active:isMb}' @click="setIsMb(true)">手机号注册</span>
-                <span :class="{active:!isMb}" @click="setIsMb(false)">邮箱注册</span>
+                <!-- <span :class="{active:!isMb}" @click="setIsMb(false)">邮箱注册</span> -->
             </div>
             <div class="step-one" v-show="!codeTrue">
 

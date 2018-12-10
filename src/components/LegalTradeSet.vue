@@ -89,7 +89,7 @@ export default {
 #legaltrade-set {
   min-height: 1050px;
 }
-/* .content-wrap{background: #fff center bottom 316px repeat-x,-webkit-linear-gradient(top,#21263f,#262a42);} */
+/* .content-wrap{background: #fff center bottom 316px repeat-x,-webkit-linear-gradient(top,#21263f,#14143f);} */
 .account {
   width: 1200px;
   margin: 0 auto;

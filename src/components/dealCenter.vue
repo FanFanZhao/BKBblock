@@ -5,7 +5,7 @@
 				<div class="sidebar">
           <market></market>
         </div>
-				<div class="notice_box" style="margin-top:10px">
+				<div class="notice_box" style="margin-top:5px">
         <notice></notice>
       </div>
 			</div>
@@ -34,7 +34,7 @@
         <!-- <div class="entrust_box">
           <hisentrust></hisentrust>
         </div> -->
-        <!-- <div class="deatil_box" style="background: #181b2a;">
+        <!-- <div class="deatil_box" style="background: #18184c;">
             <detail></detail>
         </div> -->
 
@@ -111,44 +111,44 @@ export default {
     .main-l {
       width: 350px;
       height: 100%;
-      margin: 10px 10px  0 0;
+      margin: 5px 0  0 0;
       > div {
         // background: #fff;
         border: 1px solid #C8DAE2;
-        // background: #181b2a;
-        margin: 0 10px 10px;
+        // background: #18184c;
+        margin: 0 0 5px 5px;
       }
     }
     .main-r {
-      margin-left: 360px;
+      margin-left: 355px;
       border-left: 1px solid #ccc;
-      padding: 0 10px 10px 20px;
+      padding: 0 5px 5px 20px;
       .parts {
-        margin-top: 10px;
+        margin-top: 5px;
         max-height: 530px;
 
         > .part-l {
-          // background: #181b2a;
+          // background: #18184c;
           min-width: 67%;
           padding-bottom: 20px;
         }
         > .part-r {
           width: 33%;
           > div {
-            margin-left: 10px;
-            // background: #181b2a;
+            margin-left: 5px;
+            // background: #18184c;
             height: 100%;
             padding-bottom: 20px;
           }
         }
       }
       >div{
-        //  background: #181b2a;
-         margin-top: 10px;
+        //  background: #18184c;
+         margin-top: 5px;
       }
       .depth-map {
         max-height: 500px;
-        margin-top: 10px;
+        margin-top: 5px;
       }
     }
   }

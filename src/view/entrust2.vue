@@ -67,7 +67,7 @@
                         <span class="fl w8 tr" :class="item.type=='out'?'redColor':''">{{item.type=='in'?'买入':'卖出'}}</span>
                     </li>
                 </ul>
-                <div class="getmore tc fColor1 ft14 mt10 curPer" @click="getMore01" v-if="!loading && hisList.length>9">{{more01}}</div>
+                <div class="getmore tc cblue ft14 mt10 curPer" @click="getMore01" v-if="!loading && hisList.length>9">{{more01}}</div>
                 <div class="tc" v-if="loading">
                     <img src="@/assets/images/loading.gif" alt="" class="lodw20">
                     <p class="ft12 baseColor">加载中...</p>
@@ -329,7 +329,7 @@ export default {
 .content {
   padding: 0 40px 0 30px;
   height: 300px;
-  border: 1px solid rgb(204, 204, 204);
+  /* border: 1px solid rgb(204, 204, 204); */
 }
 .list-title {
   line-height: 40px;

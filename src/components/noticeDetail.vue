@@ -14,6 +14,9 @@
                         <div class="mb30 clear">
                             <span class=" w90 fl tc">{{title}}</span>
                         </div>
+                        <div class="tc">
+                            <img src="url_img" class="">
+                        </div>
                         <div class="detailContent ">
                             <p v-html="content" ref="con"></p>
                         </div> 
@@ -37,8 +40,8 @@ export default {
             title:'',
             content:'',
             abstract:'',
-            update_time:''
-
+            update_time:'',
+            url_img:''
         }
     },
     created(){
@@ -56,6 +59,7 @@ export default {
                 this.content=res.message.content;
                 this.abstract=res.message.abstract;
                 this.update_time=res.message.update_time;
+                this.url_img=res.message.thumbnail;
                 this.setProperty();
             }else{
                 layer.msg(res.message);
@@ -106,12 +110,12 @@ export default {
             .nav-after{
                 display: block;
                 height: 10px;
-                // background-color: #262a42;
+                // background-color: #14143f;
             }
             .account-content {
                 width: 100%;
                 min-height: 750px;
-                // background-color: #181b2a;
+                // background-color: #18184c;
                 .detailBig{
                     padding: 48px 46px 20px;
                     .mb30{
@@ -121,7 +125,7 @@ export default {
                         line-height: 26px;
                         p{
                           &>*{
-                            // background-color: #181b2a!important;
+                            // background-color: #18184c!important;
                            }  
                         }
                        

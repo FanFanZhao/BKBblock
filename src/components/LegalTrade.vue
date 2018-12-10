@@ -292,7 +292,7 @@
 				}).then(res => {
 					console.log(res);
 					if (res.data.type == 'ok') {
-						layer.msg(res.data.message)
+						layer.msg(res.data.message.msg)
 						callback && callback(res)
 					} else {
 						layer.msg(res.data.message)

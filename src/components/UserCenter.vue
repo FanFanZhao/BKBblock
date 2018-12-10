@@ -42,7 +42,7 @@ export default {};
     // padding-left: 180px;
     >ul,>div{
       padding: 0 30px;
-      background: #f8f8f8;
+      background:18184c;
     }
     >.content-l{
       // position: absolute;

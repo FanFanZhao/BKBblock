@@ -1,5 +1,5 @@
 <template>
-    <div class="deal" style="min-width:600px;background:#181b2a">
+    <div class="deal" style="min-width:600px;background:#18184c">
 		<div class="title fColor1">实时成交</div>
         <div class="container fColor1 ft12 scroll">
             <div class="deal-title clear tc">
@@ -66,7 +66,7 @@
 </script>
 
 <style scoped>
-.title{height: 48px;line-height: 48px;padding: 0 10px 0 30px;background-color: #181b2a;}
+.title{height: 48px;line-height: 48px;padding: 0 10px 0 30px;background-color: #18184c;}
 .container{padding: 10px 25px 10px 20px;height: 580px;overflow: auto;}
 .deal-title{color: #637085;margin-bottom: 5px;}
 .list-item li{line-height: 20px;}

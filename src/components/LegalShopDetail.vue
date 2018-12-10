@@ -377,10 +377,10 @@ export default {
 #legal-shop-detail {
   margin: 30px auto 0;
   width: 1200px;
-  // background: #f8f8f8;
+  // background:18184c;
   line-height: 30px;
   > .top {
-    // background: #f8f8f8;
+    // background:18184c;
     line-height: 36px;
     padding: 16px 30px;
     > .top-t {
@@ -420,7 +420,7 @@ export default {
     }
   }
   > .md {
-    // background: #f8f8f8;
+    // background:18184c;
     padding: 16px 30px;
     > div {
       margin-right: 50px;
@@ -431,7 +431,7 @@ export default {
     }
   }
   > .list {
-    // background: #f8f8f8;
+    // background:18184c;
     margin-top: 20px;
     padding: 5px 30px 16px;
     > .tab {
@@ -446,7 +446,7 @@ export default {
         cursor: pointer;
       }
       .now {
-        color: #2e1b85;
+        color: #6a4aff;
         font-weight: 600;
       }
     }

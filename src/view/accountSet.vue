@@ -37,7 +37,7 @@
                 <router-link class="fr red" to="/components/bindPhone" v-if="account == '未绑定'">去绑定</router-link>
                 <span class="fr blue" v-else>已绑定</span>
             </li>
-            <li>
+            <!-- <li>
                 <img  :src="esrc">
                 <span  class="ml20">绑定邮箱</span>
                 <p  class="fl">
@@ -47,8 +47,8 @@
                 <span  class="fr red mouseDefault"></span>
                 <router-link class="fr red" to="/components/bindEmail" v-if="email == '未绑定'">去绑定</router-link>
                 <span class="fr blue" v-else>已绑定</span>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <img  :src="msrc">
                 <span  class="ml20">资金密码</span>
                 <p  class="fl">
@@ -56,11 +56,10 @@
                 </p>
                 <span  class="fr red ml25 mouseDefault"></span>
                 <span  class="fr red mouseDefault"></span>
-                <!-- <router-link class="fr red" to="/components/bindmpwd" v-if="email == '未设置'">未设置</router-link> -->
                 <router-link class="fr red" to="/components/bindmpwd">{{goset}}</router-link>
-            </li>
+            </li> -->
             <li ><img  src="@/assets/images/success.png">
-                <span  class="ml20">登录密码</span>
+                <span  class="ml20">忘记登录密码</span>
                 <p  class="fl">互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。</p>
                 <span  class="fr red ml25 mouseDefault"></span>
                 <!-- <span  class="fr red mouseDefault"  @click="goPwd()">修改</span> -->
@@ -239,7 +238,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$navBack: #181b2a;
+$navBack: #18184c;
 $red: #d45858;
 $line: #303b4b;
 $fColor2: #637085;

@@ -34,7 +34,7 @@
 
         <ul class="coin-wrap scroll">
             <li v-for="(market,index) in marketList " v-if="(legal_index || isShow) == index" >
-              <p v-for="(itm,idx) in market" v-if="itm.is_display==1"  :key="itm.id" :class="{'active_p':(legal_index || isShow)==index&&idx==(currency_index || ids)}" :data-id='itm.id' :data-index='idx' @click="quota_shift(idx,itm.currency_id,itm.legal_id,itm.currency_name,itm.legal_name,itm,index,market)">
+              <p v-for="(itm,idx) in market"   :key="itm.id" :class="{'active_p':(legal_index || isShow)==index&&idx==(currency_index || ids)}" :data-id='itm.id' :data-index='idx' @click="quota_shift(idx,itm.currency_id,itm.legal_id,itm.currency_name,itm.legal_name,itm,index,market)">
                 <span class="w36"><img :src="itm.logo" alt=""><i>{{itm.currency_name}}/{{itm.legal_name}}</i></span>
                 <span class="w30 tr redColor" :data-name='itm.currency_name+"/"+itm.legal_name'>{{itm.now_price || 0.00}}</span>
                 <span :class="{'green':itm.change>=0}">{{(itm.change>0?'+':'')+(itm.change-0).toFixed(2)}}%</span>
@@ -53,7 +53,7 @@ export default {
       isShow: 0,
       tabList: [],
       marketList: [],
-      newData: ["HQ", "$0.076128", "-1.11%"],
+      newData: ["BKB", "$0.076128", "-1.11%"],
       legal_index: '',
       currency_index: '',
       tradeDatas: "",
@@ -67,7 +67,7 @@ export default {
     this.token = localStorage.getItem("token") || "";
     //法币列表
     this.$http({
-      url: '/api/' + "currency/quotation_new",
+      url: '/api/' + "currency/quotation",
       method: "get",
       data: {}
     }).then(res => {
@@ -330,8 +330,8 @@ export default {
   border-bottom: 1px solid #ccc;
 }
 .tabtitle .active {
-  border: 1px solid #ccc;
-  border-bottom: none;
+  /* border: 1px solid #ccc;
+  border-bottom: none; */
 }
 .coin-title div {
   width: 33.3%;
@@ -394,7 +394,7 @@ export default {
 .coin-wrap li span:last-child {
   color: #cc4951;
 }
-/* .coin-wrap li:nth-child(odd){background-color: #181b2a;} */
+/* .coin-wrap li:nth-child(odd){background-color: #18184c;} */
 .coin-wrap li span.green {
   color: #55a067;
 }

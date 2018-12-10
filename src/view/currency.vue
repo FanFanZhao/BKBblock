@@ -1,12 +1,12 @@
 <template>
-    <div class="currency">
+    <!-- <div class="currency">
         <div class="title ">币种资料</div>
         <div class="content f14 ">
             <p class="ft24 ">{{currency_name}}</p>
             <p class=" abstract ft14">简介</p>
             <p class="mt15 ft14" v-html="content"></p> 
         </div>
-    </div>
+    </div> -->
 </template>
 <script>
 export default {

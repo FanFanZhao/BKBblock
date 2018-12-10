@@ -123,11 +123,11 @@ export default {
     padding: 0 30px;
     line-height: 50px;
     font-size: 20px;
-    // background: #f8f8f8;
+    // background:18184c;
   }
   > .filter-box {
     line-height: 30px;
-    // background: #f8f8f8;
+    // background:18184c;
     span {
       margin-left: 16px;
       cursor: pointer;
@@ -141,7 +141,7 @@ export default {
   }
   > ul {
     padding: 10px 30px;
-    // background: #f8f8f8;
+    // background:18184c;
     li {
       > div {
         justify-content: space-between;
@@ -156,7 +156,7 @@ export default {
   > .more {
     text-align: center;
     padding: 20px;
-    // background: #f8f8f8;
+    // background:18184c;
     cursor: pointer;
   }
   >.nomore{

@@ -568,7 +568,7 @@ export default {
         position: absolute;
         top: 25px;
         left: -30px;
-        // border: 10px solid #262a42;
+        // border: 10px solid #14143f;
     }
     .hide{
         display: none;
@@ -579,7 +579,7 @@ export default {
         .rec-con{
             margin: 10px;
             padding: 0 20px;
-            // background: #262a42;
+            // background: #14143f;
                 span{
                     flex:1;text-align: center;
                     line-height: 3;

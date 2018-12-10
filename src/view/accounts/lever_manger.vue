@@ -166,11 +166,11 @@ export default {
         margin: 20px 0;
         font-size: 20px;
         border-radius: 3px;
-        background-color: #181b2a;
+        background-color: #18184c;
     }
     .mainbox{
         >div{
-            background: #181b2a
+            background: #18184c
         }
         .main-left{
             width: 220px;
@@ -218,10 +218,10 @@ export default {
                         }
                     }
                     li:hover{
-                       background-color: #262a42; 
+                       background-color: #14143f; 
                     }
                     .select{
-                        background-color: #262a42;
+                        background-color: #14143f;
                         border-radius: 3px;
                     }
                 }

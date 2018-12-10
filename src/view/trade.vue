@@ -31,10 +31,10 @@
                         <input type="number" v-model="buyInfo.buyNum" @keydown.69.prevent  @keyup="numFilter($event)">
                         <span>{{currency_name}}</span>
                     </div>
-                    <div class="mt40 input-item clear">
+                    <!-- <div class="mt40 input-item clear">
                         <label>资金密码</label>
                         <input type="password" v-model="buyInfo.pwd" @keydown.69.prevent>
-                    </div>
+                    </div> -->
                     <!-- <div class="attion tr 1">范围 (0.000001,20,精度: 0.000001)</div> -->
                     <div class="mt50 1 ft16">交易额 {{buyTotal}} {{legal_name}}</div>
                     <div class="sell_btn curPer mt40 tc greenBack 1 ft16" @click="buyCoin">买{{currency_name}}</div>
@@ -61,10 +61,10 @@
                         <input type="number" @keydown.69.prevent  @keyup="numFilter($event)" v-model="sellInfo.sellNum">
                         <span>{{currency_name}}</span>
                     </div>
-                    <div class="mt40 input-item clear">
+                    <!-- <div class="mt40 input-item clear">
                         <label>资金密码</label>
                         <input type="password" v-model="sellInfo.pwd" @keydown.69.prevent>
-                    </div>
+                    </div> -->
                     <!-- <div class="attion tr 1">范围 (0.000001,20,精度: 0.000001)</div> -->
                     <div class="mt50 1 ft16">交易额 {{sellTotal}} {{legal_name}}</div>
                     <div class="sell_btn curPer mt40 tc redBack 1 ft16" @click="sellCoin">卖{{currency_name}}</div>
@@ -91,9 +91,9 @@ export default {
       allBalance: 0,
       disabled: false,
       lastPrice: "111",
-      pwd:'',
-      buyInfo: { buyPrice: 0, buyNum: 0,pwd:'', url: "transaction/in" },
-      sellInfo: { sellPrice: 0, sellNum: 0,pwd:'', url: "transaction/out" },
+      // pwd:'',
+      buyInfo: { buyPrice: 0, buyNum: 0, url: "transaction/in" },
+      sellInfo: { sellPrice: 0, sellNum: 0, url: "transaction/out" },
       tradetype: [{ typetext: "限价交易" }, { typetext: "市价交易" }]
     };
   },
@@ -201,10 +201,7 @@ export default {
         layer.msg("请输入买入量");
         return;
       }
-      if(!this.buyInfo.pwd || this.buyInfo.pwd.length< 6){
-        layer.msg("请输入资金密码");
-        return;
-      }
+     
       var i = layer.load();
       this.$http({
         url: "/api/" + this.buyInfo.url,
@@ -214,7 +211,6 @@ export default {
           currency_id: this.currency_id,
           price: this.disabled ? this.lastPrice : this.buyInfo.buyPrice,
           num: this.buyInfo.buyNum,
-          pay_password:this.buyInfo.pwd
         },
         headers: { Authorization: localStorage.getItem("token") }
       })
@@ -254,10 +250,7 @@ export default {
         layer.msg("请输入卖出量");
         return;
       }
-      if(!this.sellInfo.pwd || this.sellInfo.pwd.length< 6){
-        layer.msg("请输入资金密码");
-        return;
-      }
+    
       var i = layer.load();
       this.$http({
         url: "/api/" + this.sellInfo.url,
@@ -267,7 +260,6 @@ export default {
           currency_id: this.currency_id,
           price: this.disabled?this.lastPrice:this.sellInfo.sellPrice,
           num: this.sellInfo.sellNum,
-          pay_password:this.sellInfo.pwd
         },
         headers: { Authorization: localStorage.getItem("token") }
       })

@@ -126,7 +126,7 @@
                         }],
                         series: [{
                                 type: 'candlestick',
-                                name: 'HQ',
+                                name: 'BKB',
                                 color: 'green',
                                 lineColor: 'green',
                                 upColor: 'red',

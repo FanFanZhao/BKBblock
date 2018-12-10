@@ -29,24 +29,24 @@
         <span>联系方式：</span>
         <span>{{msg.seller_phone}}</span>
       </div>
-      <div>
+      <!-- <div>
         <span>识别码：</span>
         <span style="color:red">{{msg.messy_code}}      (*转账时请务必备注此识别码)</span>
-      </div>
+      </div> -->
       <div>
         <span>参考号：</span>
         <span>{{msg.id}}</span>
       </div>
       <div>
         <span>商家账户：</span>
-        <router-link :to="{path:'/legalSeller',query:{sellerId:msg.seller_id}}" tag="span" style="color:#2E1B85">{{msg.seller_name}}</router-link>
+        <router-link :to="{path:'/legalSeller',query:{sellerId:msg.seller_id}}" tag="span" style="color:rgb(186, 171, 255);">{{msg.seller_name}}</router-link>
       </div>
       <div class="btns">
         <div class="btn" @click="showCancel = true">取消订单</div>
         <!-- <div class="btn" @click="showConfirm = true">我已付款，点击确认</div> -->
-        <div class="btn imgbtn">
-          我已付款，上传付款凭证
-          <input type="file" id="file" accept="image/*" @change="file" >
+        <div class="btn imgbtn"  @click="havpay">
+          我已付款
+          <!-- <input type="file" id="file" accept="image/*" @change="file" > -->
         </div>
       </div>
     </div>
@@ -116,6 +116,9 @@ export default {
           this.msg = res.data.message;
         }
       });
+    },
+    havpay(){
+      this.showConfirm = true;
     },
     cancel(){
       this.$http({
@@ -191,7 +194,7 @@ export default {
   width: 1200px;
   margin: 50px auto;
   > .title {
-    background: #f8f8f8;
+    background:18184c;
     margin-bottom: 20px;
     font-size: 20px;
     line-height: 60px;
@@ -203,7 +206,7 @@ export default {
     }
   }
   > .info {
-    background: #f8f8f8;
+    background:18184c;
     padding: 0 30px;
     line-height: 40px;
     >div{
@@ -240,7 +243,7 @@ export default {
       margin: 200px auto 0;
       border-radius: 2px;
       width: 360px;
-      background: #fff;
+      background: #0e0828;
       line-height: 40px;
       text-align: center;
       >div:first-child{

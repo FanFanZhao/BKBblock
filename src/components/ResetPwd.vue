@@ -6,8 +6,8 @@
                 <div class="main">
                     <p class="main_title">重置密码</p>
                     <div class="register-input">
-                        <span class="register-item">请输入原密码</span>
-                        <input type="password" class="input-main input-content input_bg" maxlength="20" v-model="oldPwd" id="account">
+                        <span class="register-item">请输入手机号</span>
+                        <input type="moibile" class="input-main input-content input_bg" maxlength="20" v-model="mobile" id="account">
                     </div>
                      <div class="register-input">
                         <span class="register-item">请输入新密码</span>
@@ -47,31 +47,23 @@ export default {
       pwd: "",
       rePwd: "",
       code: "",
-      resetSeconds: "发送验证码"
+      resetSeconds: "发送验证码",
+      mobile:''
     };
   },
-
+  created(){
+    this.mobile=localStorage.getItem('accountNum')
+  },
   methods: {
     sendCode() {
       if (this.resetSeconds != "发送验证码") {
         return;
       }
       let msg = "";
-      let oldpassword = this.oldPwd;
-
-      let password = this.pwd;
-      let re_password = this.rePwd;
-
-      if (oldpassword == "" || password == "" || re_password == "") {
-        return;
-      } else if (password != re_password) {
-        layer.msg("两次输入的密码不一致");
-        return;
-      }
       this.$http({
-        url: "/api/password_send",
+        url: "/api/sms_send",
         method: "post",
-        data: { type: 1 },
+        data: {user_string:this.mobile,type:'forget'},
         headers: { Authorization: localStorage.getItem("token") }
       }).then(res => {
         layer.msg(res.data.message);
@@ -92,13 +84,12 @@ export default {
     },
     reset() {
       let msg = "";
-      let oldpassword = this.oldPwd;
-
+  
       let password = this.pwd;
       let re_password = this.rePwd;
       let login_password_code = this.code;
       if (
-        oldpassword == "" ||
+       
         password == "" ||
         re_password == "" ||
         login_password_code == ""
@@ -109,13 +100,13 @@ export default {
         return;
       } else {
         this.$http({
-          url: "/api/safe/alter_password",
+          url: "/api/user/forget",
           method: "post",
           data: {
-            oldpassword: oldpassword,
+            account: this.mobile,
             password: password,
-            re_password: re_password,
-            login_password_code: login_password_code
+            repassword: re_password,
+            code: login_password_code
           },
           headers: { Authorization: localStorage.getItem("token") }
         }).then(res => {
@@ -139,7 +130,7 @@ export default {
 #reset-pwd {
   min-height: 1050px;
 }
-/* .content-wrap{background: #fff center bottom 316px repeat-x,-webkit-linear-gradient(top,#21263f,#262a42);} */
+/* .content-wrap{background: #fff center bottom 316px repeat-x,-webkit-linear-gradient(top,#21263f,#14143f);} */
 .account {
   width: 1200px;
   margin: 0 auto;

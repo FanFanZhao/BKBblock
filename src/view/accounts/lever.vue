@@ -290,7 +290,7 @@ export default {
             border-radius: 3px;
             text-align: left;
             vertical-align: middle;
-            // background-color: #262a42;
+            // background-color: #14143f;
             .dia-tit{
                 padding: 0 40px 30px;
                 font-size: 24px;

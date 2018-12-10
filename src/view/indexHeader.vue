@@ -5,17 +5,17 @@
         <img src="../assets/images/logo.png" alt="">
       </div>
       <router-link to="/" exact>首页</router-link>
-      <router-link to="/c2c">c2c交易</router-link>
+      <!-- <router-link to="/c2c">c2c交易</router-link> -->
       <router-link to="/legalTrade">法币交易</router-link>
       <router-link to="/dealCenter">币币交易</router-link>
       <router-link to="/myLegalShops" v-if="isShow">我的商铺</router-link>
       <!-- <router-link to="/fiatradCenter">法币交易</router-link> -->
       <router-link to="/userSetting">安全设置</router-link>
       <router-link to="/components/noticeList">公告</router-link>
-      <div class="coin-box">
+      <!-- <div class="coin-box">
         <router-link to="/currencyApply">上币申请</router-link>
         <router-link to="/currencyList" >币种列表</router-link>
-      </div>
+      </div> -->
       <div>
         <div class="download">
           <div class="curPer">app下载</div>
@@ -42,13 +42,13 @@
           <div class="links">
             <!-- <router-link to="/userCenter">个人中心</router-link> -->
             <div v-for="(item,index) in accountList" @click="goto(null,item.page)">{{item.title}}</div>
-            <router-link to="/workOrder">提交工单</router-link>
+            <!-- <router-link to="/workOrder">提交工单</router-link> -->
             <div @click="signOut">退出登录</div>
           </div>
         </div>
       </div>
       <div class=" theme flex">
-          <img src="../assets/images/light.png" @click="$changeTheme('light')" alt="">
+          <!-- <img src="../assets/images/light.png" @click="$changeTheme('light')" alt=""> -->
           <img src="../assets/images/dark.png"  @click="$changeTheme('dark')" alt="">
           
         </div>
@@ -197,7 +197,7 @@ export default {
       &:hover {
         a:last-child {
           display: block;
-          background: #181b2a;
+          background: #18184c;
           // text-align: center;
         }
       }
@@ -242,7 +242,7 @@ export default {
         width: 80px;
         z-index: 999;
         text-align: center;
-        background: #181b2a;
+        background: #18184c;
         display: none;
         a {
           margin: 0;
@@ -275,7 +275,7 @@ export default {
         position: absolute;
         right: 0;
         z-index: 999;
-        background: #181b2a;
+        background: #18184c;
         display: none;
         a{
           border-bottom: 1px solid #383d54;

@@ -6,7 +6,7 @@
     /*left: 20px;*/
   }
   #loading-indicator,body.chart-page {
-    background: #131a21;
+    background: #181b2a;
   }
   .my2{
     /*background: none;不能删*/
@@ -49,7 +49,7 @@
   }
   .mydate{
     /*margin-left: 20px;*/
-    background: #131a21 !important;
+    background: #181b2a !important;
     /* color: #fff !important; */
   }
   .header-chart-panel .group.header-group-properties{
@@ -59,25 +59,25 @@
       display: none;
   }
   .tv-dialog{
-    background-color: #131a21;
+    background-color: #181b2a;
     color: #c7cce6
   }
   .tv-dialog__section {
-    border-bottom-color: #080d13;
+    border-bottom-color: #14143f;
   }
   .tv-dialog__title{
     color: #fff
   }
   .tv-insert-indicator-dialog__search-control {
-    background-color: #080d13;
+    background-color: #14143f;
 }
 .tv-insert-indicator-dialog__search-control input {
-  background-color: #080d13;
+  background-color: #14143f;
 }
 .tv-search-row {
-  border-bottom-color: #131a21;
+  border-bottom-color: #181b2a;
 }
 .tv-insert-indicator-dialog__pages::-webkit-scrollbar-thumb {
-  border-color: #080d13 !important;
-  background-color: #080d13 !important;
+  border-color: #14143f !important;
+  background-color: #14143f !important;
 }
