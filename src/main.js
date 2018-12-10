@@ -28,8 +28,8 @@ Vue.prototype.$changeTheme = function (type) {
 	var link = document.querySelector('link#darkTheme');
 	console.log(head, link);
 
-	// var theme = window.localStorage.getItem('theme');
-	var theme = 'dark';
+	var theme = window.localStorage.getItem('theme');
+	// var theme = 'dark';
 	if (theme != type) {
 		window.localStorage.setItem('theme', type);
 	}

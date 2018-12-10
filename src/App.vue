@@ -12,9 +12,9 @@ export default {
   components:{IndexFooter},
   created(){
     var theme = window.localStorage.getItem('theme');
-    if(theme == 'dark'){
+    // if(theme == 'dark'){
       this.$changeTheme('dark');
-    }
+    // }
   }
 }
 </script>
