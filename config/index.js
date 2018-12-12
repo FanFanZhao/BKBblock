@@ -13,7 +13,7 @@ module.exports = {
     // proxyTable: {},
     proxyTable: {
       '/api': {
-          target: 'http://newtrading.mobile369.com/api',//后端接口地址
+          target: 'http://trading.coinbkb.com/api',//后端接口地址
           changeOrigin: true,//是否允许跨越
           pathRewrite: {
               '^/api': '/',//重写,
