@@ -4,7 +4,7 @@
         <div class="account-wrap">
             <div class="account" style="width:auto">
                 <div>
-                    <div class="back-nav  ft20 clear" style="padding:0 20px;"> 公告
+                    <div class="back-nav  ft20 clear" style="padding:0 20px;"> 帮助中心
                         
                     </div>
                     
@@ -70,7 +70,7 @@ export default {
   methods: {
     getNotice(){
       this.$http({
-        url:  '/api/news/list?c_id=4',
+        url:  '/api/news/list?c_id=7',
         method:'post',
       }).then(res => {
         // console.log(res);

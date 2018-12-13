@@ -1,12 +1,12 @@
 <template>
-    <!-- <div class="currency">
+    <div class="currency">
         <div class="title ">币种资料</div>
         <div class="content f14 ">
             <p class="ft24 ">{{currency_name}}</p>
             <p class=" abstract ft14">简介</p>
             <p class="mt15 ft14" v-html="content"></p> 
         </div>
-    </div> -->
+    </div>
 </template>
 <script>
 export default {
@@ -34,28 +34,25 @@ export default {
     },
     mounted(){
         var that = this;
-        if(window.localStorage.getItem('tradeData')){
-            var localData=JSON.parse(window.localStorage.getItem('tradeData'))
-            that.currency_id = localData.currency_id,
-            that.legal_id = localData.legal_id;
-            that.currency_name = localData.currency_name;
-            that.legal_name = localData.legal_name;
+        eventBus.$on("toTrade", function(data) {
+            // console.log(data)
+            that.currency_id = data.currency_id
+            that.currency_name = data.currency_name;
             that.getData();
-        }else{
-            eventBus.$on("toTrade", function(data) {
-                // console.log(data)
-                that.currency_id = data.currency_id
-                that.currency_name = data.currency_name;
+        });
+        eventBus.$on("toTrade0", function(data0) {
+            // console.log(data0)
+            that.currency_id = data0.currency_id
+            that.currency_name = data0.currency_name;
+            that.getData();
+        });
+        eventBus.$on("toCurrency", function(data) {
+            that.currency_id = data.currency_id,
+            that.currency_name = data.currency_name;
                 that.getData();
-            });
-            eventBus.$on("toTrade0", function(data0) {
-                // console.log(data0)
-                that.currency_id = data0.currency_id
-                that.currency_name = data0.currency_name;
-                that.getData();
-            });
-        }
+        });
         
+       
         
     }
 }
@@ -65,6 +62,6 @@ export default {
 .title{height: 48px;line-height: 46px;padding: 0 40px 0 30px;}
 .content{padding: 15px 30px 60px;}
 .ft24{font-size: 24px}
-.abstract{padding:15px 0;border-bottom: 1px solid #ccc;}
+.abstract{padding:15px 0;border-bottom: 1px solid #525252;}
 </style>
 

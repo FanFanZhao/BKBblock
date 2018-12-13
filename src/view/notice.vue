@@ -19,8 +19,8 @@
         },
         created(){
             this.$http({
-                url: '/api/' + 'news/list',
-                method:'get',
+                url: '/api/' + 'news/list?c_id=4',
+                method:'post',
                 data:{}
             }).then(res=>{
                 res = res.data;

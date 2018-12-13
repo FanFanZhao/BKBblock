@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import IndexFooter from './view/indexFooter';
+import IndexFooter from './view/footerr';
 export default {
   name: 'App',
   components:{IndexFooter},

@@ -136,6 +136,7 @@ export default {
         //组件间传值
         setTimeout(() => {
           eventBus.$emit("toTrade0", tradeDatas);
+          eventBus.$emit("toCurrency", tradeDatas);
         }, 1000);
         setTimeout(() => {
           eventBus.$emit("toExchange0", tradeDatas);
@@ -287,6 +288,7 @@ export default {
       //向兄弟组件传数据
       eventBus.$emit("toTrade", tradeDatas);
       eventBus.$emit("toExchange", tradeDatas);
+      eventBus.$emit("toCurrency", tradeDatas);
       // 存本地
       window.localStorage.setItem('tradeData',JSON.stringify(tradeDatas))
     }

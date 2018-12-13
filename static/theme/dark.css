@@ -284,7 +284,7 @@ body,
   border-right: 1px dashed #2f3440;
 }
 #app .noticeDetail {
-  background: #181b2a;
+  /* background: #181b2a; */
 }
 #app #user-center > .content > .content-l {
   border-right: 1px solid #1e272f;

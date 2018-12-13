@@ -7,7 +7,7 @@
             <span>用户协议</span>
             <span>本站公告</span>
         </div>
-        <p class="">© 2013-2018 BKB交易所</p>
+        <p class="">© 2013-2018 全球数字货币交易所</p>
     </div>
 </template>
 

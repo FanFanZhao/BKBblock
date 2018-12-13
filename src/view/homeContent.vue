@@ -4,17 +4,17 @@
             <div class="swiper-wrapper">
                <div class="swiper-slide sliders">
                    <a href="">
-                   <img src="../../static/imgs/swp1.jpg" />
+                   <img src="../../static/imgs/swp1.png" />
                    </a>
                </div>
                <div class="swiper-slide sliders">
                    <a href="">
-                   <img src="../../static/imgs/swp2.jpg" />
+                   <img src="../../static/imgs/swp2.png" />
                    </a>
                </div>
                <div class="swiper-slide sliders">
                    <a href="">
-                   <img src="../../static/imgs/swp3.jpg" />
+                   <img src="../../static/imgs/swp3.png" />
                    </a>
                </div>
                 
@@ -22,20 +22,6 @@
             </div>
              <div class="swiper-pagination swiper-pagination02"></div>
         </div>
-        <!-- <div class="swiper-container banner_wrap swiper-container-horizontal">
-            <div class="swiper-wrapper">
-
-               <div class="swiper-slide sliders" v-for="(item,index) in swiperImgs" :key="index">
-                   <a href="">
-                   <img :src="item.thumbnail" />
-                   </a>
-               </div>
-              
-            </div>
-             <div class="swiper-pagination swiper-pagination02"></div>
-        </div>
-        -->
-       
        
         <div class="coins-list">
           <div class="coin-tab">
@@ -164,18 +150,18 @@
         <div class="notice flex">
           <div>
             <div class="notpic1"></div>
-            <div>2kex力量，中国力量！</div>
-            <div>透明公开的2kex区块链慈善基金，您的每一笔交易都能帮助改善偏远山区儿童的生活与学习</div>
+            <div>Coinbkb多功能生活服务</div>
+            <div>心得生活服务体验，让区块链服务于生活，全球多个国家开放平台币充值缴费，水电煤等。</div>
           </div>
           <div>
             <div class="notpic2"></div>
-            <div>2kex持续分红+奖励</div>
-            <div>2kex每个月将平台50%利润用于用户分红奖励，大力回馈用户是2kex生态建设的重要计划</div>
+            <div>全球生态合伙人</div>
+            <div>Coinbkb 每个月拿出20%平台利润 用于给全球生态合伙人进行分红。大力建设合伙人新生态社区。</div>
           </div>
           <div>
             <div class="notpic3"></div>
             <div>极速交易安全稳定</div>
-            <div>超高性能撮合交易技术架构，多级数据灾备，1:1准备金仓储，2kex不仅仅是交易所也是您的高级资产安全管理钱包！</div>
+            <div>超高性能撮合交易技术架构，多级数据灾备，1:1准备金仓储，Coinbkb不仅仅是交易所也是您的高级资产安全管理钱包！</div>
           </div>
           <div>
             <div class="notpic4"></div>
@@ -188,11 +174,24 @@
         <div class="mb">
           <img src="../assets/images/homemb.jpg" alt="">
            <div>
-             <div> 随时随地 不错过任何机会</div>
-           <p> 实时交易：买入、卖出、杠杆</p>
-           <p> 随身充提：充值、提现</p>
-           <p>实时提醒：行情提醒、事件提醒</p>
+              <div> 随时随地 不错过任何机会</div>
+              <p> 实时交易：买入、卖出、杠杆</p>
+              <p> 随身充提：充值、提现</p>
+              <p>实时提醒：行情提醒、事件提醒</p>
+              <div class="flex down">
+                <div class="  posrel flex alcenter  jscenter mr20" @mouseover="anclick" @mouseout="anclick2">
+                  <img src="../assets/images/an.png" alt="" class="mr10 imglogo">
+                    <span class="" >安卓下载</span>
+                    <img src="../assets/images/an_qr.png" alt="" class="erweima mt20 posabs" v-show="show1">
+                </div>
+                <div class="  posrel flex alcenter jscenter " @mouseover="appleclick" @mouseout="appleclick2">
+                   <img src="../assets/images/apple.png" alt="" class="mr10 imglogo">
+                  <span class="">苹果下载</span>
+                  <img src="../assets/images/ewm.png" alt="" class="erweima mt20 posabs" v-show="show2">
+                </div>
+            </div>
            </div>
+          
         </div>
         <div class="news">
           <p class="">公告</p>
@@ -210,7 +209,7 @@
             
           </div>
         </div>
-        <footer>
+        <!-- <footer>
           <div class="content flex">
             <dl>
               <dt>网站功能</dt>
@@ -228,7 +227,7 @@
               <dd></dd>
             </dl>
           </div>
-        </footer>
+        </footer> -->
     </div>
     
 </template>
@@ -264,7 +263,9 @@ export default {
       coin_list: [],
 
       noticeList: [],
-      swiperImgs: []
+      swiperImgs: [],
+      show1:false,
+      show2:false
     };
   },
   created() {
@@ -285,7 +286,7 @@ export default {
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
     var mySwiper02 = new Swiper(".banner_wrap", {
-      // direction: 'vertical',
+      // direction: 'horizental',
       loop: true,
       autoplay: 2000,
       // 如果需要分页器
@@ -298,28 +299,17 @@ export default {
     this.getNews();
   },
   methods: {
-    getSwiper() {
-      this.$http({
-        url: "/api/news/list?c_id=24"
-      })
-        .then(res => {
-          console.log(res);
-          if (res.data.type == "ok") {
-            this.swiperImgs = res.data.message.list;
-          }
-        })
-        .then(() => {
-          var mySwiper02 = new Swiper(".banner_wrap", {
-            // direction: 'vertical',
-            loop: true,
-            // autoplay: 2000,
-            // 如果需要分页器
-            pagination: ".swiper-pagination02",
-            paginationClickable: true,
-            observer: true, //修改swiper自己或子元素时，自动初始化swiper
-            observeParents: true //修改swiper的父元素时，自动初始化swiper
-          });
-        });
+    anclick(){
+      this.show1=true;
+    },
+     anclick2(){
+      this.show1=false;
+    },
+    appleclick(){
+      this.show2=true;
+    },
+     appleclick2(){
+      this.show2=false;
     },
     connect() {
       var that = this;
@@ -460,9 +450,11 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+
 footer{
   background: rgb(20,20,63);
   padding: 30px 0;
+
   .content{
     width: 1500px;
     margin: 0 auto;
@@ -762,7 +754,7 @@ footer{
   // margin-top: 100px;
   height: 800px;
   padding-left: 800px;
-  img {
+  >img {
     position: absolute;
     left: -497px;
     top: 0;
@@ -785,30 +777,45 @@ footer{
       color: rgba(139, 137, 200, 0.5);
     }
   }
+  .down{
+    font-size: 14px;
+    color: #8B89C8;
+    >div{
+      width: 180px;
+      height: 50px;
+      border-radius: 25px;
+      line-height: 50px;
+      border:1px solid #8b89c8;
+      .imglogo{
+        width: 26px;
+      }
+      .erweima{width: 150px;height: 150px;top: 40px;}
+    }
+  }
 }
 .home-box {
   background: rgb(24, 24, 76);
 }
-div.swiper-container .swiper-pagination {
-  left: initial;
-  right: 10px !important;
-  top: 0;
-  height: 100%;
-  width: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-div.swiper-container .swiper-pagination > span {
-  display: block;
-  background: #fff;
-  opacity: 0.5;
-  margin: 10px 0;
-}
-div.swiper-container .swiper-pagination-bullet-active {
-  background: transparent;
-  border: 2px solid #55a067;
-}
+// div.swiper-container .swiper-pagination {
+//   left: initial;
+//   right: 10px !important;
+//   top: 0;
+//   height: 100%;
+//   width: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+// div.swiper-container .swiper-pagination > span {
+//   display: block;
+//   background: #fff;
+//   opacity: 0.5;
+//   margin: 10px 0;
+// }
+// div.swiper-container .swiper-pagination-bullet-active {
+//   background: transparent;
+//   border: 2px solid #55a067;
+// }
 .up-clr {
   color: #55a067;
 }
@@ -967,6 +974,7 @@ div.swiper-container .swiper-pagination-bullet-active {
   margin-bottom: 10px;
   color: #192544;
 }
+
 </style>
 
 

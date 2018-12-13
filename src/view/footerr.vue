@@ -1,6 +1,6 @@
 <template>
-    <div class="footer_wrap">
-        <div class="left fl">
+    <div class="footer_wrap ">
+        <!-- <div class="left ">
             <h1 class="mb15 logo">BKB Global</h1>
             <p class="mb15">全球领先的数字资产交易平台</p>
             <div class="icon_img">
@@ -10,50 +10,63 @@
                 <i class="iconfont icon-weibo"></i>
             </div>
             <p class="mt50">© 2013-2018 BKB Global</p>
-        </div>
-        <div class="fr">
-            <ul>
-                <li class="pb50">
-                    <p class="fl tl foot_title ft12" v-for="item in titleList">{{item}}</p>
-                </li>
-                <li v-for="item in conList"><a class="con_a mb15 ft16" v-for="itm in item.list" v-bind:href="itm.src">{{itm.text}}</a></li>
-            </ul>
+        </div> -->
+        <div class="">
+          <div class="footer_box">
+              <div class="flex mb10">
+                <p class="fl tl foot_title ft16 flex1 " v-for="item in titleList">{{item}}</p>
+              </div>
+              <div class="flex">
+                  <div v-for="item in conList" class="flex1 "><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
+                  <div class="flex1">
+                    <p  class="con_a mb10 ft12" v-for="item in contact" >{{item}}</p>
+                  </div>
+                  <div class="flex1 "><img src="../assets/images/join_code.jpg" alt="" class="ewm"></div>
+              </div>
+              
+            </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+  // , "关注我们"
   data() {
     return {
-      titleList: ["服务", "工具", "关于", "条款说明"],
+      titleList: ["关于我们", "帮助中心", "联系我们","关注我们"],
       conList: [
         {
-          list: [{ text: "BKB咨询", src: "" },{ text: "客户端下载", src: "" },{ text: "BKB集团", src: "" },{ text: "用户协议", src: "" }]
+          list: [{ text: "联系我们", src: "/components/noticeList" },{ text: "隐私条款", src: "/components/noticeList" },{ text: "注册协议", src: "/components/noticeList" },{ text: "币种介绍", src: "/components/noticeList" }]
         },
         {
-          list: [{ text: "BKB矿池", src: "" },{ text: "帮助中心", src: "" },{ text: "联系我们", src: "" },{ text: "隐私条款", src: "" }]
+          list: [{ text: "账户管理", src: "/help" },{ text: "交易管理", src: "/help" },{ text: "充值提现", src: "/help" },{ text: "网站优势", src: "/help" },{ text: "费用标准", src: "/help" }]
         },
-        {
-          list: [{ text: "BKB生态", src: "" },{ text: "API文档", src: "" },{ text: "加入我们", src: "" },{ text: "法律声明", src: "" }]
-        },
-        {
-          list: [{ text: "BKB资本", src: "" },{ text: "数字资产介绍", src: "" },{ text: "上币申请", src: "" },{ text: "费率", src: "" }]
-        },
-        {
-          list: [{ text: "机构账户", src: "" },{ text: "新手指导", src: "" },{ text: "公告", src: "" }]
-        }
-      ]
+      
+       
+      ],
+      contact: [
+          "qq群号：317660286","客服微信：coinbkb", "客服邮箱：coinbkb@sina.com"
+        ],
     };
   }
 };
 </script>
 <style scoped>
 .footer_wrap {
-  background: #09162e;
+  background: #14143f;
   color: #6b80ae;
   overflow: hidden;
   padding: 50px 80px;
+ 
 }
+.footer_box{
+  width: 80%;
+  margin: 0 auto;
+}
+.footer_wrap >div{
+    width: 1200px;
+    margin:  0 auto;
+  }
 .foot_title,.con_a{
   display: inline-block;
   width: 180px;
@@ -67,6 +80,9 @@ export default {
 }
 .logo{
     color: #6b80ae;
+}
+.ewm{
+  width: 100px;
 }
 </style>
 

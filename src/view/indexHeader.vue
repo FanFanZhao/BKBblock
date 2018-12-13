@@ -10,18 +10,20 @@
       <router-link to="/dealCenter">币币交易</router-link>
       <router-link to="/myLegalShops" v-if="isShow">我的商铺</router-link>
       <!-- <router-link to="/fiatradCenter">法币交易</router-link> -->
-      <router-link to="/userSetting">安全设置</router-link>
+      <!-- <router-link to="/userSetting">安全设置</router-link> -->
+      <router-link to="/wakuang">交易挖矿</router-link>
       <router-link to="/components/noticeList">公告</router-link>
+      <router-link to="/help">帮助</router-link>
       <!-- <div class="coin-box">
         <router-link to="/currencyApply">上币申请</router-link>
         <router-link to="/currencyList" >币种列表</router-link>
       </div> -->
-      <div>
+      <!-- <div>
         <div class="download">
-          <div class="curPer">app下载</div>
+          <div class="curPer">帮助</div>
           <img src="../assets/images/ewm.png" alt="">
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="header-r flex">
       <div v-if="!account_number.length" class="flex">
@@ -47,11 +49,11 @@
           </div>
         </div>
       </div>
-      <div class=" theme flex">
-          <!-- <img src="../assets/images/light.png" @click="$changeTheme('light')" alt=""> -->
+      <!-- <div class=" theme flex">
+          <img src="../assets/images/light.png" @click="$changeTheme('light')" alt="">
           <img src="../assets/images/dark.png"  @click="$changeTheme('dark')" alt="">
           
-        </div>
+        </div> -->
     </div>
   </div>
 </template>

@@ -42,6 +42,8 @@ import currencyList from '@/view/currency_list'
 import currencyEdit from '@/view/edit_currency'
 import workOrder from '@/components/workOrder'
 import orderDetail from '@/view/orderDetail'
+import wakuang from '@/view/wakuang'
+import help from '@/view/helps'
 //收款方式
 
 import ForgetPwd from '@/components/ForgetPwd' //忘记密码
@@ -117,7 +119,16 @@ export default new Router({
 					name: 'fiatradCenter',
 					component: fiatradCenter
 				},
-			
+				{
+					path: '/wakuang',
+					name: 'wakuang',
+					component: wakuang
+				},
+				{
+					path: '/help',
+					name: 'help',
+					component: help
+				},
 				{
 					path: '/userSetting',
 					name: 'userSetting',

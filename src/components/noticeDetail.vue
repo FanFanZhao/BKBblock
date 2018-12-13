@@ -15,7 +15,7 @@
                             <span class=" w90 fl tc">{{title}}</span>
                         </div>
                         <div class="tc">
-                            <img src="url_img" class="">
+                            <img :src="url_img" class="">
                         </div>
                         <div class="detailContent ">
                             <p v-html="content" ref="con"></p>
@@ -125,7 +125,7 @@ export default {
                         line-height: 26px;
                         p{
                           &>*{
-                            // background-color: #18184c!important;
+                            background-color: transparent!important;
                            }  
                         }
                        
