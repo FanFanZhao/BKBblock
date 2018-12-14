@@ -26,6 +26,7 @@ import coinRecord from '@/view/coinRecord'
 import noticeList from '@/components/noticeList'
 import noticeDetail from '@/components/noticeDetail'
 import helpDetail from '@/components/helpDetail'
+import newsDetail from '@/components/newsDetail'
 import aceite from '@/view/aceite'
 import region from '@/view/region'
 import chargeRecord from '@/view/chargeRecord'
@@ -281,6 +282,12 @@ export default new Router({
 			name: 'helpDetail',
 			component: helpDetail
 		},
+		{
+			path: '/components/newsDetail',
+			name: 'newsDetail',
+			component: newsDetail
+		},
+		
 		{
 			path: '/orderDetail',
 			name: 'orderDetail',

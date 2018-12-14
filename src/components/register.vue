@@ -15,7 +15,7 @@
                     <input type="text" class="input_bg" v-model="account">
                 </div>
                     <div class="tip" style="margin-bottom:10px">请输入验证码</div>
-                <div class="code-box">
+                <div class="code-box flex between">
                     <input type="text" v-model="code" class="code input_bg">
                     <button type='button' class="code-btn redBg" @click="sendCode">发送验证码</button>
                 </div>
@@ -353,7 +353,7 @@ export default {
       button {
         border: none;
         line-height: 45px;
-        width: 93px;
+        width: 90px;
         cursor: pointer;
         border-radius: 2px;
         // color: #c7cce6;

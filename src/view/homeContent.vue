@@ -1,27 +1,33 @@
 <template>
     <div class="indexBlackes home-box">
        <div class="swiper-container banner_wrap swiper-container-horizontal">
-            <div class="swiper-wrapper">
-               <div class="swiper-slide sliders">
-                   <a href="">
-                   <img src="../../static/imgs/swp1.png" />
-                   </a>
-               </div>
-               <div class="swiper-slide sliders">
-                   <a href="">
-                   <img src="../../static/imgs/swp2.png" />
-                   </a>
-               </div>
-               <div class="swiper-slide sliders">
-                   <a href="">
-                   <img src="../../static/imgs/swp3.png" />
-                   </a>
-               </div>
-                
+          <div class="swiper-wrapper">
+              <div class="swiper-slide sliders" v-for="(item,index) in bannerlist"  :key="index">
+        <!-- <router-link :to="{path:'/legalSeller',query:{sellerId:msg.seller_id}}" tag="span" >{{msg.seller_name}}</router-link> -->
+
+                  <router-link :to="{path:'/components/newsDetail',query:{'id':item.id}}" >
+                    <img :src="item.thumbnail" />
+                  </router-link>
+                  <!-- <div @click="gotoNews(item.id)">
+                    <img :src="item.thumbnail" />
+                  </div> -->
+              </div>
+            
+              <!-- <div class="swiper-slide sliders">
+                  <a href="">
+                  <img src="../../static/imgs/swp2.png" />
+                  </a>
+              </div>
+              <div class="swiper-slide sliders">
+                  <a href="">
+                  <img src="../../static/imgs/swp3.png" />
+                  </a>
+              </div> -->
                
-            </div>
-             <div class="swiper-pagination swiper-pagination02"></div>
-        </div>
+              
+          </div>
+          <div class="swiper-pagination swiper-pagination02"></div>
+      </div>
        
         <div class="coins-list">
           <div class="coin-tab">
@@ -39,9 +45,13 @@
           <ul class="list-con" v-for="(item,index) in quotation" :key="index" v-if="nowCoin == item.name">
             <li v-for="(li,inde) in item.quotation" :key="inde" :data-name='item.name+"/"+li.name'>
               <div class="two-coin">
-                <img :src="li.logo" alt="" class="itemlogo">
-                <span>{{li.name}}</span>
-                <span style="color:#61688a">/{{item.name}}</span>
+                <span style="width:30px;text-align:left;display:inline-block;">
+                  <img :src="li.logo" alt="" class="itemlogo">
+                </span>
+               <div style="display:inline-block;min-width:100px;text-align:left;">
+                  <span>{{li.name}}</span>
+                  <span style="color:#61688a">/{{item.name}}</span>
+               </div>
               </div>
               <!-- <div class="yester">
                 {{li.yesterday_last_price}}
@@ -262,7 +272,7 @@ export default {
       swiperList: [],
       coinList: [],
       coin_list: [],
-
+      bannerlist:[],
       noticeList: [],
       swiperImgs: [],
       show1:false,
@@ -286,16 +296,16 @@ export default {
       observer: true, //修改swiper自己或子元素时，自动初始化swiper
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
-    var mySwiper02 = new Swiper(".banner_wrap", {
-      // direction: 'horizental',
-      loop: true,
-      autoplay: 2000,
-      // 如果需要分页器
-      pagination: ".swiper-pagination02",
-      paginationClickable: true,
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
-    });
+     var mySwiper02 = new Swiper(".banner_wrap", {
+        // direction: 'horizental',
+        loop: true,
+        autoplay: 2000,
+        // 如果需要分页器
+        pagination: ".swiper-pagination02",
+        paginationClickable: true,
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true //修改swiper的父元素时，自动初始化swiper
+      });
     // this.connect();
     this.getNews();
   },
@@ -410,19 +420,16 @@ export default {
     },
     // 公告
     getNews() {
-      // this.$http({
-      //   url: "/api/news/list?c_id=21"
-      // }).then(res => {
-      //   console.log(res);
-      //   if (res.data.type == "ok") {
-      //     var list = res.data.message.list;
-      //     if (list.length > 2) {
-      //       that.noticeList = list.slice(0, 2);
-      //     } else {
-      //       that.noticeList = list;
-      //     }
-      //   }
-      // });
+      this.$http({
+        url: "/api/news/list?c_id=9",
+        method:'post'
+      }).then(res => {
+        console.log(res);
+        if (res.data.type == "ok") {
+          this.bannerlist = res.data.message.list;
+         
+        }
+      });
       this.$http({
         url:  '/api/news/list',
         method:'post',
