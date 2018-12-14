@@ -12,11 +12,11 @@
                 <div class="account-content">
                     <div class="detailBig">
                         <div class="mb30 clear">
-                            <span class=" w90 fl tc">{{title}}</span>
+                            <span class="w90 fl tc">{{title}}</span>
                         </div>
-                        <div class="tc">
-                            <img :src="url_img" class="">
-                        </div>
+                        <!-- <div class="tc">
+                            <img :src="url_img" class="" style="max-width:60%;margin:0 auto 10px;">
+                        </div> -->
                         <div class="detailContent ">
                             <p v-html="content" ref="con"></p>
                         </div> 

@@ -1,7 +1,7 @@
 <template>
     <div class="bgf8">
         <div class="top">
-            <p>法币账户  总资产折合：{{totle}}（USDT）<span class='ft12 all_account'><span class=""></span>≈ <span>{{totlecny}}</span> CNY</span></p>
+            <p>法币账户  总资产折合：<span class=' all_account'>≈ {{totle}}</span><span class="ft12"> CNY</span></p>
         </div>
         <ul class="list">
             <li class="curPer" v-for="(item,index) in list" :key="index" @click="go_legalAccount(item.currency)">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="convert flex1">
                        <p class="ft12 mincny">折合</p>
-                       <p class="lock_balance_num">{{item.cny_money}}（CNY）</p>
+                       <p class="lock_balance_num">{{((item.legal_balance-0)+(item.lock_legal_balance-0))*item.cny_price}}（CNY）</p>
                     </div>
                 </div>
             </li>
@@ -30,7 +30,8 @@ export default {
         return{
           totle:'',
           totlecny:'',
-          list:[]
+          list:[],
+          cnyprice:0
         }
     },
     created(){
@@ -56,6 +57,7 @@ export default {
                         that.list = res.data.message.legal_wallet.balance;
                         this.totle = res.data.message.legal_wallet.totle;
                         this.totlecny = res.data.message.legal_wallet.CNY;
+                        
                     }else{
                         layer.msg(res.message);
                     }

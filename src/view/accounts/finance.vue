@@ -1,12 +1,12 @@
 <template>
     <div class="bgf8">
         <div class="header bgf8">
-            <p class="fl">总资产折合：<span class="asset_num">{{total}}</span><span class="asset_name">USDT</span><span class="ft12 "> ≈ <span>{{totalcny}}</span>CNY</span>
+            <p class="fl">总资产折合：<span class="asset_num">≈ {{total}}</span><span class="ft12">CNY</span>
             <!-- <label class="min_lab ft14"><input type="checkbox" />隐藏小额资产</label><i></i><label class="inp_lab"><input  type="text"/><i></i></label> -->
             </p>
             <p class="fr right_text">
                 <!-- <span class="record" @click="record">财务记录</span> -->
-                <span class="address" @click="withdraw_address">提币地址管理</span>
+                <!-- <span class="address" @click="withdraw_address">提币地址管理</span> -->
             </p>
         </div>
         <div class="content  ft12">
@@ -27,10 +27,10 @@
                    <!-- <p class="flex1 tc">{{item.valuation}}</p> -->
                    <!-- <p class="flex1 tc">{{item.lock_position}}</p> -->
                    <p class="flex1 tc operation">
-                       <span @click="excharge(index,item.currency)" v-if="item.recharge_and_withdraw_opened==1">充币</span>
-                       <span v-else class="allow">充币</span>
-                       <span @click="withdraw(index,item.currency)" v-if="item.recharge_and_withdraw_opened==1">提币</span>
-                       <span v-else class="allow">提币</span>
+                       <!-- <span @click="excharge(index,item.currency)" v-if="item.recharge_and_withdraw_opened==1">充币</span> -->
+                       <span @click="excharge(index,item.currency)" class="allow">充币</span>
+                       <!-- <span @click="withdraw(index,item.currency)" v-if="item.recharge_and_withdraw_opened==1">提币</span> -->
+                       <span @click="withdraw(index,item.currency)" class="allow">提币</span>
                        <!-- <span @click="exchange">兑换</span> -->
                        <span @click="rec(index,item.currency)">记录</span>
                    </p>
@@ -38,7 +38,7 @@
                    <!--充币区-->
                    <div class="hide_div" v-if="index == active">
                        <p class="fColor2 ft12">充币地址</p>
-                       <p class="mt50 mb50"><span class="ft18  excharge_address" :class="{'bg':flags}">{{excharge_address}}</span><span id="copy" @click="copy" class="copy ft14">复制</span><span class="ewm_wrap"><span class="ewm ft14" @click="show_ewm">二维码</span>
+                       <p class="mt20 mb50"><span class="ft18  excharge_address" :class="{'bg':flags}">{{excharge_address}}</span><span id="copy" @click="copy" class="copy ft14">复制</span><span class="ewm_wrap"><span class="ewm ft14" @click="show_ewm">二维码</span>
                          <div class="ewm_img" id="code" :class="{'hide':isHide}">
                              
                          </div>
@@ -185,7 +185,7 @@ export default {
         //充币
         excharge(index,currency){
             console.log(currency);
-            this. currency= currency;
+            this.currency= currency;
             if(this.flag){
                 this.flag = false;
                 this.active = 'a';
