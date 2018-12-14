@@ -122,7 +122,7 @@ export default {
     },
     cancel(){
       this.$http({
-        url:'api/user_legal_pay_cancel',
+        url:'/api/user_legal_pay_cancel',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}
@@ -147,7 +147,7 @@ export default {
 			formData.append("file", $("#file")[0].files[0]);
       var i = layer.load();
 			$.ajax({
-				url:'api/upload',
+				url:'/api/upload',
 				type: 'post',
 				data: formData,
 				processData: false,
@@ -168,9 +168,9 @@ export default {
     },
     confirm(){
       this.$http({
-        url:'api/user_legal_pay',
+        url:'/api/user_legal_pay',
         method:'post',
-        data:{id:this.id,pay_voucher:this.src},
+        data:{id:this.id},
         headers:{Authorization:this.token}
       }).then(res => {
         // console.log(res);

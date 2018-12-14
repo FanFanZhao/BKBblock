@@ -87,7 +87,7 @@ export default {
     goDetail(id) {
       var id = id;
       this.$router.push({
-        name: "noticeDetail",
+        name: "helpDetail",
         query: { id: id }
       });
     }

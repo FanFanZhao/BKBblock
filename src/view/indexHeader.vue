@@ -1,9 +1,9 @@
 <template>
   <div id="index-head" class="flex">
     <div class="header-l flex">
-      <div class="logo">
+      <router-link to="/" class="logo" exact>
         <img src="../assets/images/logo.png" alt="">
-      </div>
+      </router-link>
       <router-link to="/" exact>首页</router-link>
       <!-- <router-link to="/c2c">c2c交易</router-link> -->
       <router-link to="/legalTrade">法币交易</router-link>
@@ -173,7 +173,7 @@ export default {
       border-radius: 50%;
       width: 30px;
       height: 30px;
-      background: #fff;
+      // background: #fff;
       > img {
         width: 100%;
       }

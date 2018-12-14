@@ -25,6 +25,7 @@ import rechargeMoney from '@/view/rechargeMoney'
 import coinRecord from '@/view/coinRecord'
 import noticeList from '@/components/noticeList'
 import noticeDetail from '@/components/noticeDetail'
+import helpDetail from '@/components/helpDetail'
 import aceite from '@/view/aceite'
 import region from '@/view/region'
 import chargeRecord from '@/view/chargeRecord'
@@ -274,6 +275,11 @@ export default new Router({
 			path: '/components/noticeDetail',
 			name: 'noticeDetail',
 			component: noticeDetail
+		},
+		{
+			path: '/components/helpDetail',
+			name: 'helpDetail',
+			component: helpDetail
 		},
 		{
 			path: '/orderDetail',

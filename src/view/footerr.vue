@@ -36,16 +36,16 @@ export default {
       titleList: ["关于我们", "帮助中心", "联系我们","关注我们"],
       conList: [
         {
-          list: [{ text: "联系我们", src: "/components/noticeList" },{ text: "隐私条款", src: "/components/noticeList" },{ text: "注册协议", src: "/components/noticeList" },{ text: "币种介绍", src: "/components/noticeList" }]
+          list: [{ text: "隐私条款", src: "/components/noticeList" },{ text: "注册协议", src: "/components/noticeList" },{ text: "币种介绍", src: "/components/noticeList" }]
         },
         {
-          list: [{ text: "账户管理", src: "/help" },{ text: "交易管理", src: "/help" },{ text: "充值提现", src: "/help" },{ text: "网站优势", src: "/help" },{ text: "费用标准", src: "/help" }]
+          list: [{ text: "账户管理", src: "/help" },{ text: "交易管理", src: "/help" },{ text: "充值提现", src: "/help" },{ text: "费用标准", src: "/help" }]
         },
       
        
       ],
       contact: [
-          "qq群号：317660286","客服微信：coinbkb", "客服邮箱：coinbkb@sina.com"
+          "QQ群号：317660286","客服微信：coinbkb", "客服邮箱：coinbkb@sina.com"
         ],
     };
   }
@@ -60,7 +60,7 @@ export default {
  
 }
 .footer_box{
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .footer_wrap >div{

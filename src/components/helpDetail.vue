@@ -14,9 +14,7 @@
                         <div class="mb30 clear">
                             <span class=" w90 fl tc">{{title}}</span>
                         </div>
-                        <div class="tc">
-                            <img :src="url_img" class="">
-                        </div>
+                        
                         <div class="detailContent ">
                             <p v-html="content" ref="con"></p>
                         </div> 
@@ -33,7 +31,7 @@
 <script>
 import indexHeader from '@/view/indexHeader'
 export default {
-    name:'noticeDetail',
+    name:'helpDetail',
     components:{indexHeader},
     data (){
         return{
