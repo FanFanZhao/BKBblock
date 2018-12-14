@@ -180,7 +180,7 @@ export default {
     },
     cancel(){
       this.$http({
-        url:'api/user_legal_pay_cancel',
+        url:'/api/user_legal_pay_cancel',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}
@@ -195,7 +195,7 @@ export default {
    // 卖家确认付款
     confirm(){
       this.$http({
-        url:'api/legal_deal_sure',
+        url:'/api/legal_deal_sure',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}
@@ -213,7 +213,7 @@ export default {
 			formData.append("file", $("#file")[0].files[0]);
       var i = layer.load();
 			$.ajax({
-				url:'api/upload',
+				url:'/api/upload',
 				type: 'post',
 				data: formData,
 				processData: false,
@@ -235,7 +235,7 @@ export default {
     // 买家确认付款
     confirmPay(){
       this.$http({
-        url:'api/user_legal_pay',
+        url:'/api/user_legal_pay',
         method:'post',
         data:{id:this.id,pay_voucher:this.src},
         headers:{Authorization:this.token}

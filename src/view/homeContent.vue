@@ -39,6 +39,7 @@
           <ul class="list-con" v-for="(item,index) in quotation" :key="index" v-if="nowCoin == item.name">
             <li v-for="(li,inde) in item.quotation" :key="inde" :data-name='item.name+"/"+li.name'>
               <div class="two-coin">
+                <img :src="li.logo" alt="" class="itemlogo">
                 <span>{{li.name}}</span>
                 <span style="color:#61688a">/{{item.name}}</span>
               </div>
@@ -151,7 +152,7 @@
           <div>
             <div class="notpic1"></div>
             <div>Coinbkb多功能生活服务</div>
-            <div>心得生活服务体验，让区块链服务于生活，全球多个国家开放平台币充值缴费，水电煤等。</div>
+            <div>“心”的生活服务体验，让区块链服务于生活，全球多个国家开放平台币充值缴费，水电煤等。</div>
           </div>
           <div>
             <div class="notpic2"></div>
@@ -450,8 +451,13 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-
+ .itemlogo{
+    width: 24px;
+    height:auto;
+    vertical-align: middle;
+  }
 footer{
+ 
   background: rgb(20,20,63);
   padding: 30px 0;
 

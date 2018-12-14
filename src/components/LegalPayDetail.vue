@@ -152,7 +152,7 @@ export default {
     // 取消交易
     cancel(){
       this.$http({
-        url:'api/user_legal_pay_cancel',
+        url:'/api/user_legal_pay_cancel',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}
@@ -167,7 +167,7 @@ export default {
     // 确认付款
     confirm(){
       this.$http({
-        url:'api/user_legal_pay',
+        url:'/api/user_legal_pay',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}
@@ -183,7 +183,7 @@ export default {
     hadPay(){
       console.log(123465)
       this.$http({
-        url:'api/legal_deal_user_sure',
+        url:'/api/legal_deal_user_sure',
         method:'post',
         data:{id:this.id},
         headers:{Authorization:this.token}

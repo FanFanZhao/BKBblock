@@ -60,8 +60,8 @@
 					<div class="totals-num">
 						<input v-if=" types == 'trade' " class="number" type="number" :placeholder='"请输入欲"+money_type+"总额"' v-model="nums">
 						<input v-else class="number" type="number" :placeholder='"请输入要"+money_type+"数量"' v-model="nums">
-						<button class="all" type="button" v-if=" type== 'buy' " @click="allMoney();">全部买入</button>
-						<button class="all" type="button" v-else @click="allMoney();">全部卖出</button>
+						<button class="all" type="button" v-if=" type== 'buy' " @click="allMoney();">全部卖出</button>
+						<button class="all" type="button" v-else @click="allMoney();">全部买入</button>
 						<span class="name">{{name01}}</span>
 					</div>
 					<div class="maxnum">限额{{minNum}}-{{maxNum}}</div>
@@ -115,10 +115,12 @@
 			// console.log(window.location);
 
 			let token = window.localStorage.getItem("token") || "";
-			if (token) {
-				this.token = token;
-				this.getCoins();
-			}
+			// if (token) {
+			// 	this.token = token;
+			// 	this.getCoins();
+			// }
+			this.token = token;
+			this.getCoins();
 		},
 		filters: {
 			toFixeds: function(value) {
