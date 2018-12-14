@@ -19,7 +19,7 @@
                     </div>
                      <div class="register-input">
                         <span class="register-item">请输入验证码</span>
-                        <div class="code-box">
+                        <div class="code-box flex between">
                             <input type="text" class="input-main input-content input_bg" maxlength="16" v-model="code">
                             <button type="button" class="redBg" @click="sendCode">{{resetSeconds}}</button>
                         </div>
@@ -218,9 +218,8 @@ export default {
   /* border: none; */
 }
 .code-box button {
-  padding: 0 20px;
+  padding: 0 15px;
   line-height: 47px;
-  width: 107px;
   border-radius: 2px;
 }
 </style>

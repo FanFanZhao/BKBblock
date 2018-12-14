@@ -239,9 +239,8 @@ export default {
   /* border: none; */
 }
 .code-box button {
-  padding: 0 20px;
+  padding: 0 15px;
   line-height: 47px;
-  width: 107px;
   border-radius: 3px;
   cursor: pointer;
 }

@@ -14,14 +14,14 @@
                         <div class="mb30 clear">
                             <span class=" w90 fl tc">{{title}}</span>
                         </div>
-                        <div class="tc">
+                        <!-- <div class="tc">
                             <img :src="url_img" class="">
-                        </div>
+                        </div> -->
                         <div class="detailContent ">
                             <p v-html="content" ref="con"></p>
                         </div> 
                         <div class=" mt40">
-                            <p class="tr">{{abstract}}</p>
+                            <!-- <p class="tr">{{abstract}}</p> -->
                             <p class="tr mt5">{{update_time}}</p>
                         </div>
                     </div>

@@ -1,25 +1,25 @@
 <template>
     <div class="noticeDetail">
         <indexHeader></indexHeader>
-        <div class="account-wrap">
-            <div class="account">
+        <div class="account-wrap" style="background:##14143f">
+            <div class="account" style="background:##14143f">
                 <div>
                     <div class="back-nav  ft20"> 
                         <span class="fr  curPer" @click="goBefore">&lt;&lt;返回</span>
                     </div>
                     <div class="nav-after"></div>
                 </div>
-                <div class="account-content">
-                    <div class="detailBig">
+                <div class="account-content" style="background:##14143f">
+                    <div class="detailBig" style="background:##14143f">
                         <div class="mb30 clear">
                             <span class=" w90 fl tc">{{title}}</span>
                         </div>
                         
-                        <div class="detailContent ">
+                        <div class="detailContent " style="background:##14143f">
                             <p v-html="content" ref="con"></p>
                         </div> 
                         <div class=" mt40">
-                            <p class="tr">{{abstract}}</p>
+                            <!-- <p class="tr">{{abstract}}</p> -->
                             <p class="tr mt5">{{update_time}}</p>
                         </div>
                     </div>
