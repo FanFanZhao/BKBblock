@@ -148,7 +148,7 @@ export default {
   },
   methods: {
     havpay(){
-      this.showConfirm = true;
+      this.showPay = true;
     },
     getMsg(){
       var i = layer.load();
@@ -190,7 +190,7 @@ export default {
       }).then(res => {
         // console.log(res);
         layer.msg(res.data.message);
-        
+        location.reload();
       }).then(() => {
         this.showCancel = false;
       })
@@ -240,7 +240,7 @@ export default {
       this.$http({
         url:'/api/user_legal_pay',
         method:'post',
-        data:{id:this.id,pay_voucher:this.src},
+        data:{id:this.id},
         headers:{Authorization:this.token}
       }).then(res => {
         // console.log(res);

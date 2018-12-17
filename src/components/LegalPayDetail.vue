@@ -39,10 +39,10 @@
         <span>识别码：</span>
         <span style="color:red">{{msg.messy_code}}</span>
       </div> -->
-      <div v-if="msg.pay_voucher">
+      <!-- <div v-if="msg.pay_voucher">
         <span>支付凭证：</span>
         <img :src="msg.pay_voucher" alt="" class="curPer" style="width:40px;height:40px" @click="evimgs(msg.pay_voucher)">
-      </div>
+      </div> -->
       <div>
         <span>参考号：</span>
         <span>{{msg.id}}</span>
