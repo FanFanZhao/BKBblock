@@ -258,7 +258,7 @@
 							if (res.data.message.data.type == 'sell') {
 								// layer.msg(res.data.message.msg)
 					            if(_this.type=='sell'){
-									layer.msg(res.data.message.msg+'如30分钟未完成交易,可自行取消交易！')
+									layer.msg(res.data.message.msg+'如2小时未完成交易,将自行取消交易！')
 								}
 							setTimeout(function() {
 								_this.$router.push({path:'/legalPay',query:{id:res.data.message.data.id}});

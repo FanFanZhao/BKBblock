@@ -512,7 +512,7 @@ export default {
       var that = this;
       // this.showDetail  = false;
       if(type=='buy'){
-      layer.confirm('必须在30分钟内完成付款，否则将会被冻结账号确认下单？', {
+      layer.confirm('必须在2小时内完成付款，否则将会被冻结账号确认下单？', {
           btn: ['确认','取消'] //按钮
         }, function(){
           that.buyandsell(id,type);
