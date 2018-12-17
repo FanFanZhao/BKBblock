@@ -63,7 +63,7 @@
                         <span class="fl w8">{{(item.price * item.number) | numFilter}}</span>
                         <span class="fl w10">{{item.price}}</span>
                         <span class="fl w10">已成交</span>
-                        <span class="fl w10">{{item.type=='in'? item.in_fee||'无':item.out_fee||'无'}}</span>
+                        <span class="fl w10">{{item.type=='in'? '0':item.rate}}</span>
                         <span class="fl w8 tr" :class="item.type=='out'?'redColor':''">{{item.type=='in'?'买入':'卖出'}}</span>
                     </li>
                 </ul>
@@ -103,13 +103,13 @@ export default {
       enList: [],
       hisList: [],
       urls: "transaction_in",
-      types: "in"
+      types: "in",
+      coinInfo:{}
     };
   },
   created() {
     this.address = localStorage.getItem("address") || "";
     this.token = localStorage.getItem("token") || "";
-    //  this.getdata('transaction_in');
   },
   methods: {
     changeType(index, url) {
@@ -193,6 +193,7 @@ export default {
     },
     getdata(url, type) {
       console.log(type);
+      var that=this;
       var page = this.page;
       this.$http({
         url: "/api/" + url,
@@ -209,6 +210,14 @@ export default {
           let mlist = [];
           if (res.type == "ok") {
             mlist = res.message.list;
+            if(that.coinInfo){
+              mlist=mlist.filter(function (item) {
+                console.log(that.coinInfo)
+                console.log(that.coinInfo.currency_id,item.currency)
+                  return (item.currency==that.coinInfo.currency_id && item.legal==that.coinInfo.legal_id);
+              })
+              console.log(mlist,'abc')
+            }
           }
           if (url == "transaction_in") {
             //  page = 1;
@@ -257,6 +266,7 @@ export default {
     //历史委托
     getHistory() {
       var page01 = this.page01;
+      var that=this;
       this.$http({
         url: "/api/" + "transaction_complete",
         method: "post",
@@ -271,6 +281,15 @@ export default {
           let mlist = [];
           if(res.data.type == 'ok'){
               mlist = res.data.message.list;
+              if(that.coinInfo){
+                 mlist=mlist.filter(function (item) {
+                  console.log(that.coinInfo)
+                  console.log(that.coinInfo.currency_id,item.currency)
+                    return (item.currency==that.coinInfo.currency_id && item.legal==that.coinInfo.legal_id);
+                })
+              }
+              console.log(mlist,123)
+            
           }
           if (page01 == 1) {
             this.hisList = mlist;
@@ -293,13 +312,15 @@ export default {
   mounted() {
     var that = this;
     if (this.token != "") {
-      that.getdata(this.urls, this.types);
+      // that.getdata(this.urls, this.types);
       eventBus.$on("toTrade", function() {
         that.isUrl = 0;
         that.isChoosed = 0;
         that.getdata(that.urls, that.types);
       });
-      eventBus.$on("buyTrade", function() {
+      eventBus.$on("toCurrency", function(datas) {
+        console.log(datas,'239888839999999999999')
+        that.coinInfo=datas;
         that.getdata(that.urls, that.types);
       });
     }

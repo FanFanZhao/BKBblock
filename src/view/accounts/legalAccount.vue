@@ -12,7 +12,7 @@
           </div>
           <div>
               <p class="ft12 msg_title">折合（CNY）</p>
-              <p style="color:#2EDB99">{{legal_price}}</p>
+              <p style="color:#2EDB99">{{((legal_balance-0)+(lock_legal_balance-0))*legal_price}}</p>
           </div>
         </div>
         <div class="transfer bg-part" style="margin-top:20px;padding:20px 30px">
@@ -29,7 +29,7 @@
             </div>
             <div class="flex">
                 <span>划转数量：</span>
-                <input type="numer" v-model="transferPms.number" class="input_bg">
+                <input type="number" v-model="transferPms.number" class="input_bg" >
             </div>
             <button type="button" class="curPer" :disabled='transferPms.number == ""' @click="transfer">划转</button>
         </div>
@@ -94,6 +94,7 @@ export default {
       this.page = 1;
       this.getLog(true)
     },
+ 
     getCoins() {
       var load = layer.load();
       this.token = window.localStorage.getItem("token") || "";
@@ -129,6 +130,7 @@ export default {
             that.legal_balance = msg.legal_balance;
             that.lock_legal_balance = msg.lock_legal_balance;
             that.legal_price = msg.cny_price;
+            
           } else {
             layer.msg(res.message);
           }

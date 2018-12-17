@@ -90,7 +90,7 @@ export default {
       current: 0,
       allBalance: 0,
       disabled: false,
-      lastPrice: "111",
+      lastPrice: "0",
       // pwd:'',
       buyInfo: { buyPrice: 0, buyNum: 0, url: "transaction/in" },
       sellInfo: { sellPrice: 0, sellNum: 0, url: "transaction/out" },
@@ -168,10 +168,11 @@ export default {
       this.current = index;
       if (index == 1) {
         this.disabled = true;
-
       } else {
         this.disabled = false;
       }
+      this.buyInfo.buyNum=0;
+      this.sellInfo.sellNum=0;
     },
     goNext(url) {
       this.$router.push({ name: url });
@@ -316,10 +317,20 @@ export default {
   },
   computed: {
     buyTotal() {
-      return this.buyInfo.buyPrice * this.buyInfo.buyNum || 0;
+      if(this.disabled){
+        return (this.lastPrice-0) * this.buyInfo.buyNum || 0;
+      }else{
+        console.log(this.buyInfo.buyPrice,this.buyInfo.buyNum, this.buyInfo.buyPrice * this.buyInfo.buyNum)
+        return this.buyInfo.buyPrice * this.buyInfo.buyNum || 0;
+      }
+     
     },
     sellTotal() {
-      return this.sellInfo.sellPrice * this.sellInfo.sellNum || 0;
+      if(this.disabled){
+        return (this.lastPrice-0)*this.sellInfo.sellNum ||0;
+      }else{
+        return this.sellInfo.sellPrice * this.sellInfo.sellNum || 0;
+      }
     }
   }
 };

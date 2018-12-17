@@ -36,7 +36,7 @@
 					<div class="flex alcenter">￥{{(item.limitation.min-0).toFixed(2)}}-￥{{(item.limitation.max-0).toFixed(2)}}CNY</div>
 					<div class="flex alcenter price ft16 bold">{{item.price}}</div>
 					<div class="flex alcenter">{{item.way_name}}</div>
-					<div class="flex alcenter end"  @click="buySell(item.price,item.limitation.min,item.limitation.max,item.id,item.type)">
+					<div class="flex alcenter end"  @click="buySell(item.price,item.limitation.min,item.limitation.max,item.id,item.type,item.surplus_number)">
 						<button class="curPer">{{classify}}{{name}}</button>
 					</div>
 				</li>
@@ -105,7 +105,7 @@
 				shows: false,
 				types: 'trade',
 				nums: '',
-				totalNums: '0.00',
+				surplyNums: '0',
 				ID:'',
 				money_type:'',
 				name01:'CNY'
@@ -130,7 +130,8 @@
 		},
 		methods: {
 			close(){
-                this.shows=false;
+				this.shows=false;
+				this.nums=''
 			},
 			getCoins() {
 				this.$http({
@@ -196,7 +197,7 @@
 				_this.getList(_this.type, _this.id, pageNum);
 			},
 			// 出售或者购买按钮
-			buySell(prices, min, max,id,type) {
+			buySell(prices, min, max,id,type,surplus_number) {
 				console.log(type)
 				if(type == 'sell'){
 					this.money_type = '购买'
@@ -211,6 +212,7 @@
 				_this.prices = prices;
 				_this.minNum = min;
 				_this.maxNum = max;
+				_this.surplyNums=surplus_number;
 			      var t1 = setInterval(function() {
 					_this.time--;
 					if (_this.time <= 0) {
@@ -230,10 +232,17 @@
 					this.types = 'num';
 					this.name01 = this.name;
 				}
+				this.nums=''
 			},
 			// 全部卖出或买入
 			allMoney() {
-				this.nums = this.maxNum;
+			
+				if(this.types=='trade'){
+					this.nums = this.maxNum;
+				}else{
+					this.nums=this.surplyNums;
+				}
+				console.log(this.nums)
 			},
 			// 下单
 			buyOrder() {

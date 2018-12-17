@@ -74,7 +74,7 @@
       <div class="btns">
         <div class="btn" @click="showCancel = true" v-if="msg.is_sure == 0 && msg.type =='buy'">取消订单</div>
         <div class="btn" @click="showConfirm = true" v-if="(msg.is_sure == 3) && (msg.type =='sell')">确认已收款</div>
-        <div class="btn imgbtn" v-if="(msg.is_sure==0) && (msg.type=='buy')" @click="havpay">
+        <div class="btn imgbtn" v-if="(msg.is_sure==0) && (msg.type=='buy')"  @click="havpay">
           我已付款
           <!-- <input type="file" id="file" accept="image/*" @change="file" > -->
         </div>
@@ -147,6 +147,9 @@ export default {
     }
   },
   methods: {
+    havpay(){
+      this.showConfirm = true;
+    },
     getMsg(){
       var i = layer.load();
       this.$http({
