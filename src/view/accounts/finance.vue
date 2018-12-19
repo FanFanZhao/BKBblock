@@ -61,7 +61,7 @@
                    <div class="hide_div" v-if="index == active01">
                        <p class="fColor2 ft12 mb15">提币地址</p>
                        <input class="address_inp  mb30" type="text" v-model="address" />
-                       <p class="fColor2 ft12 mb15 flex between alcenter"><span>数量</span><span>可用：<span class="use_num">{{balance}}</span><span>限额：<span>1500.000000000</span><span class="advance">提升额度</span></span></span></p>
+                       <p class="fColor2 ft12 mb15 flex between alcenter"><span>数量</span><span>可用：<span class="use_num">{{balance}}</span></span></p>
                        <label class="num_lab flex between mb30">
                             <input class="" type="text" :placeholder="min_number" v-model="number" />
                             <span>{{coinname}}</span>
@@ -69,16 +69,15 @@
                        <div class="flex mb50">
                            <div class="left_inp_wrap flex1">
                                <p class="fColor2 ft12 mb15">
-                                   <span>手续费</span>
-                                   <span>范围：<span>{{ratenum}}</span></span>
+                                   <span>手续费：</span><span>{{ratenum}}</span>
                                </p>
-                               <label class="range_lab flex alcenter between"><input class=""  type="text" v-model="rate" /><span>{{coinname}}</span></label>
+                               <label class="range_lab flex alcenter between"><input class="" disabled  type="text" v-model="rate" /><span>{{coinname}}</span></label>
                            </div>
                            <div class="right_inp_wrap flex1">
                                <p class=" mb15">
                                    <span class="fColor2 ft12">到账数量</span>
                                </p>
-                               <label class="get_lab flex alcenter between"><input class="" disabled v-model="reachnum" type="number" /><span>{{coinname}}</span></label>
+                               <label class="get_lab flex alcenter between"><input class="" disabled v-model="reach_num" type="number" /><span>{{coinname}}</span></label>
                            </div>
                        </div>
                        <div class="flex">
@@ -259,7 +258,7 @@ export default {
                         that.balance=res.message.change_balance;
                         that.min_number=res.message.min_number;
                         that.minnumber=res.message.min_number;
-                        that.ratenum=res.message.rate+'-'+res.message.rate;
+                        that.ratenum=res.message.rate;
                         that.reachnum=0.0000;
                         that.rate=res.message.rate;
                         
@@ -435,7 +434,11 @@ export default {
     created(){
         this.token= localStorage.getItem('token') || '';
     },
-
+    computed:{
+        reach_num(){
+            return (this.number -this.rate )>=0?(this.number -this.rate):0
+        }
+    },
     mounted(){
         var that = this;
         that.getdata();

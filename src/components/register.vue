@@ -53,7 +53,7 @@
                 </div>
                 <div class="invite-box">
                     <div class="tip">请输入邀请码</div>
-                    <input type="password" v-model="invite" class="invite-input">
+                    <input type="text" v-model="invite" class="invite-input">
                 </div>
                 <button type="button" @click="register" class="reg-btn confirm-btn redBg">确认</button>
             </div>

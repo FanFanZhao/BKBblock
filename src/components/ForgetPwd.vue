@@ -284,7 +284,7 @@ export default {
   width: 520px;
   border: 1px solid #ccc;
   /* background: #1e2235; */
-  background: #fff;
+  background: #1b212f;
 }
 .code-box .input-main {
   width: 419px;
