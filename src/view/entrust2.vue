@@ -311,7 +311,7 @@ export default {
   },
   mounted() {
     var that = this;
-    if (this.token != "") {
+    if (that.token != "") {
       // that.getdata(this.urls, this.types);
       eventBus.$on("toTrade", function() {
         that.isUrl = 0;

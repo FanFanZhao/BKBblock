@@ -193,7 +193,7 @@
                 <div class="  posrel flex alcenter  jscenter mr20" @mouseover="anclick" @mouseout="anclick2">
                   <img src="../assets/images/an.png" alt="" class="mr10 imglogo">
                     <span class="" >安卓下载</span>
-                    <img src="../assets/images/an_qr.png" alt="" class="erweima mt20 posabs" v-show="show1">
+                    <img src="../assets/images/ewm.png" alt="" class="erweima mt20 posabs" v-show="show1">
                 </div>
                 <div class="  posrel flex alcenter jscenter " @mouseover="appleclick" @mouseout="appleclick2">
                    <img src="../assets/images/apple.png" alt="" class="mr10 imglogo">

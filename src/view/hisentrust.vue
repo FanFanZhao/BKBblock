@@ -135,13 +135,15 @@ export default {
     },
     mounted(){
         var that = this;
-        eventBus.$on('buyTrade', function (data) {
-            console.log(data);
-            if(data){
-                that.getData();
-            }
-        });
-        that.getData();
+        if(that.token){
+            eventBus.$on('buyTrade', function (data) {
+                console.log(data);
+                if(data){
+                    that.getData();
+                }
+            });
+            that.getData();
+         }
     }
 }
 </script>
