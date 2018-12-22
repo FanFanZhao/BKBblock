@@ -201,7 +201,7 @@ export default {
         data: {
           page: page
         },
-        headers: { Authorization: this.token }
+        headers: { Authorization: that.token }
       })
         .then(res => {
           // console.log(res);
