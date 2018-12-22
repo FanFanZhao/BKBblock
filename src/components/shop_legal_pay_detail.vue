@@ -366,5 +366,5 @@ export default {
 }
   .openimg{display: block;margin: 0 auto;max-width: 100%;}
   .imgbtn{position: relative;}
-  #file{position: absolute;top: 0;left: 0;width: 190px;height: 40px;opacity: 0;z-index: 99;cursor: pointer;}
+  // #file{position: absolute;top: 0;left: 0;width: 190px;height: 40px;opacity: 0;z-index: 99;cursor: pointer;}
 </style>

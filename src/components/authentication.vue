@@ -219,7 +219,7 @@ export default {
                         z-index: 11110;
                         opacity: 0;
                         width: 100%;
-                        height: 120px;
+                        height: 120px!important;
                         top: 0;
                         cursor: pointer;
                     }
