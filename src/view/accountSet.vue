@@ -232,7 +232,7 @@ export default {
     }
   },
   mounted(){
-    this.mexit()
+    // this.mexit()
   }
 };
 </script>
