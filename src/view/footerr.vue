@@ -17,7 +17,13 @@
                 <p class="fl tl foot_title ft16 flex1 " v-for="item in titleList">{{item}}</p>
               </div>
               <div class="flex">
-                  <div v-for="item in conList" class="flex1 "><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
+                <div class="flex1">
+                  <div v-for="item in conList" ><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
+                  <a href="https://www.coinbkb.com/mobile/images/Coinbkb.pdf" target="__blank" class="con_a  ft12">币种白皮书</a>
+                </div>
+                 <div class="flex1">
+                  <div v-for="item in conList2" ><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
+                </div>
                   <div class="flex1">
                     <p  class="con_a mb10 ft12" v-for="item in contact" >{{item}}</p>
                   </div>
@@ -38,10 +44,12 @@ export default {
         {
           list: [{ text: "隐私条款", src: "/help" },{ text: "注册协议", src: "/help" },{ text: "币种介绍", src: "/help" }]
         },
-        {
-          list: [{ text: "账户管理", src: "/help" },{ text: "交易管理", src: "/help" },{ text: "充值提现", src: "/help" },{ text: "费用标准", src: "/help" }]
-        },
+        
       ],
+      conList2:[{
+          list: [{ text: "账户管理", src: "/help" },{ text: "交易管理", src: "/help" },{ text: "充值提现", src: "/help" },{ text: "费用标准", src: "/help" }]
+        }
+        ],
       contact: [
           "QQ群号：317660286","客服微信：coinbkb", "客服邮箱：coinbkb@sina.com"
         ],
