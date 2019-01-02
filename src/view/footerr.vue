@@ -19,15 +19,26 @@
               <div class="flex">
                 <div class="flex1">
                   <div v-for="item in conList" ><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
-                  <a href="https://www.coinbkb.com/mobile/images/Coinbkb.pdf" target="__blank" class="con_a  ft12">币种白皮书</a>
+                  <a href="https://www.coinbkb.com/mobile/images/Coinbkb.pdf" target="__blank" class="con_a  ft12">白皮书</a>
                 </div>
                  <div class="flex1">
                   <div v-for="item in conList2" ><router-link :to="itm.src" class="con_a mb10 ft12" v-for="(itm,index) in item.list" :key="index">{{itm.text}}</router-link></div>
                 </div>
                   <div class="flex1">
-                    <p  class="con_a mb10 ft12" v-for="item in contact" >{{item}}</p>
+                    <!-- <p  class="con_a mb10 ft12" v-for="item in contact" >{{item}}</p> -->
+                    <p class="contact mt20">
+                      <!-- <a href="facebook" target="_blank"><img src="../assets/images/fc.png" alt=""></a> -->
+                      <a href="https://twitter.com/Coinbkb2019" target="_blank"><img src="../assets/images/tt.png" alt=""></a>
+                      <a href="https://0.plus/coinbkb" target="_blank"><img src="../assets/images/by.png" alt=""></a>
+                      <!-- <a href="" target="_blank"><img src="../assets/images/qq.png" alt=""></a> -->
+                      <a href="http://qm.qq.com/cgi-bin/qm/qr?k=9tVzZQonwzlsGap_ZN3SouxOMTNg-pi2" target="_blank"><img src="../assets/images/QQ.png" alt=""></a>
+                    </p>
+                    <p class="mt20 ft12">商务邮箱：coinbkb@sina.com</p>
                   </div>
-                  <div class="flex1 "><img src="../assets/images/join_code.jpg" alt="" class="ewm"></div>
+                  <div class="flex1 ">
+                    <img src="../assets/images/join_code.png" alt="" class="ewm ">
+                    <img src="../assets/images/wechat_kefu.png" alt="" class="ewm ml40">
+                  </div>
               </div>
               
             </div>
@@ -65,6 +76,11 @@ export default {
   padding: 50px 80px;
  
 }
+.contact img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
 .footer_box{
   width: 100%;
   margin: 0 auto;
@@ -89,6 +105,7 @@ export default {
 }
 .ewm{
   width: 100px;
+  height: 100px;
 }
 </style>
 
