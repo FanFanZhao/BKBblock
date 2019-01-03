@@ -31,7 +31,7 @@
                       <a href="https://twitter.com/Coinbkb2019" target="_blank"><img src="../assets/images/tt.png" alt=""></a>
                       <a href="https://0.plus/coinbkb" target="_blank"><img src="../assets/images/by.png" alt=""></a>
                       <!-- <a href="" target="_blank"><img src="../assets/images/qq.png" alt=""></a> -->
-                      <a href="http://qm.qq.com/cgi-bin/qm/qr?k=9tVzZQonwzlsGap_ZN3SouxOMTNg-pi2" target="_blank"><img src="../assets/images/QQ.png" alt=""></a>
+                      <a href="http://qm.qq.com/cgi-bin/qm/qr?k=9tVzZQonwzlsGap_ZN3SouxOMTNg-pi2" target="_blank"><img src="../assets/images/qq.png" alt=""></a>
                     </p>
                     <p class="mt20 ft12">商务邮箱：coinbkb@sina.com</p>
                   </div>

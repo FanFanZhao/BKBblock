@@ -51,6 +51,13 @@
                     <div class="tip">请再次输入密码</div>
                     <input type="password" v-model="repwd" class="repwd-input" placeholder="请再次输入密码">
                 </div>
+                 <div class="repwd-box">
+                    <div class="tip">请输入图形验证码结果</div>
+                    <div class="flex alcenter between" style="width:520px">
+                      <input type="password" v-model="img_code" class="img_code" placeholder="请输入图形验证码结果" style="width:400px;">
+                      <img :src="get_code" alt="" style="width:100px;" @click="getcode">
+                    </div>
+                </div>
                 <div class="invite-box">
                     <div class="tip">请输入邀请码</div>
                     <input type="text" v-model="invite" class="invite-input">
@@ -79,6 +86,8 @@ export default {
       timer: "",                  //倒计时timer
       showList: false,   
       time:60         //是否显示地址列表
+      ,get_code:'',
+      img_code:''
       //province: { id: "", name: "请选择省" },      //所选省份
       //provinces: [],                              //省份列表
 
@@ -91,9 +100,12 @@ export default {
   },
   created() {
     //获取所有省份
-    
+    this.get_code='/api/send_img_code'
   },
   methods: {
+    getcode(){
+      this.get_code='/api/send_img_code?id='+Math.random(0,99);
+    },
     // 获取地区列表
     // getRegion(id, type, name) {
     //   if (type == "") {
@@ -273,7 +285,8 @@ export default {
       } else if (this.pwd !== this.repwd) {
         layer.msg("两次输入的密码不一致");
         return;
-      } else {
+      } else if(!this.img_code){
+        return ;
       }
       var data = {};
       // data.province_id = this.province.id;
@@ -286,6 +299,7 @@ export default {
       data.password = this.pwd;
       data.re_password = this.repwd;
       data.extension_code = this.invite;
+      data.img_code=this.img_code;
       //console.log(data);return;
       
       this.$http({
